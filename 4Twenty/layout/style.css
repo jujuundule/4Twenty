@@ -8,6 +8,7 @@
 /*
 /* 1. Imports
 /* 2. Variables
+/* 3. Layout
 
 
 
@@ -61,22 +62,18 @@
     --font-family_02: 'Avenir Next';
 }
 
-/* Spacing */
 
-/* Layout */
-*{
-    box-sizing: border-box;
-}
+/* 3. Layout */
 
 body *{
     color: var(--color-03);
     font-family: var(--font-family_02), sans-serif;
-    line-height: 1.8rem;
 }
 
 body{
     background-color: var(--color-01);
 }
+
 
 #Home,
 #Produkte,
@@ -85,8 +82,24 @@ body{
 #Kunden{
     background: url('../mediafiles/cracked_asphalt_seamless_pattern.webp') repeat;
     background-size: cover;
-  
+    padding: 10vh 0;
 }
+
+#Wirkstoff,
+#Produkte-LL,
+#Produkte-CL{
+    background-image: url('../mediafiles/cracked_asphalt_mobile_unten.webp'), url('../mediafiles/cracked_asphalt_mobile_oben.webp');
+    background-position: top, bottom;
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    padding: 20vh 0;
+}
+
+nav{
+    
+}
+
+
 
 #Home{
     height: 100vh;
@@ -112,13 +125,13 @@ h2 {
     color: var(--color-04);
     font-size: 4rem; 
     text-align: center;
-    margin: 2rem 0 5rem 0;
 }
 
 p{
     width: clamp(20ch, 90vw, 100ch);
     margin: 0 auto;
     text-align: center;
+    line-height: 1.8rem;
 }
 
 
