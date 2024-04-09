@@ -9,28 +9,29 @@
 /* 1. Imports
 /* 2. Variables
 /* 3. Layout
+/* 4. Typography
 
 
 
 /* =====================================*/
-
 /* 1. Imports */
+/* =====================================*/
 
 /* Fonts */
 
 @font-face {
     font-family: 'Viper Nora';
-    src: url('fonts/viper_nora.woff') format('woff');
+    src: url('../fonts/viper_nora.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Viper Nora';
-    src: url('fonts/Avenir_Next.ttc') format('tcc');
+    src: url('../fonts/Avenir_Next.ttc') format('tcc');
 }
 
-
+/* =====================================*/
 /* 2. Variables */
-
+/* =====================================*/
 
 /* Colors */
 
@@ -39,6 +40,9 @@
     --color-02: #262626;
     --color-03: #FFFFFF;
     --color-04: #AAAAAA;
+
+    /* Gradients */
+    --gradient-01: radial-gradient(circle, rgba(38,38,38,1) 0%, rgba(0,0,0,1) 100%);
 
     /* Light Line */
     --color-LL_01: #B6DDDB;
@@ -62,8 +66,16 @@
     --font-family_02: 'Avenir Next';
 }
 
+/* Spacing */
 
+:root {
+    --padding-side-mobile: 1rem;
+    --gap-mobile: 60px;
+}
+
+/* =====================================*/
 /* 3. Layout */
+/* =====================================*/
 
 body *{
     color: var(--color-03);
@@ -72,8 +84,14 @@ body *{
 
 body{
     background-color: var(--color-01);
+    position: relative;
 }
 
+section{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-mobile);
+}
 
 #Home,
 #Produkte,
@@ -88,18 +106,29 @@ body{
 #Wirkstoff,
 #Produkte-LL,
 #Produkte-CL{
-    background-image: url('../mediafiles/cracked_asphalt_mobile_unten.webp'), url('../mediafiles/cracked_asphalt_mobile_oben.webp');
-    background-position: top, bottom;
+    background-image: var(--gradient-01); /* Fallback */
+    background-image: url('../mediafiles/cracked_asphalt_mobile_oben.webp'), url('../mediafiles/cracked_asphalt_mobile_unten.webp'); /*Fallback*/
+    background-position: bottom, top;
+    background-image: url('../mediafiles/cracked_asphalt_mobile_oben.webp'), url('../mediafiles/cracked_asphalt_mobile_unten.webp'), var(--gradient-01);
+    background-position: bottom, top, center;
     background-size: 100vw;
     background-repeat: no-repeat;
-    padding: 20vh 0;
+    padding: 30% 0;
+}
+header {
+    position: fixed;
+
+    backdrop-filter: blur(15px) brightness(60%);
+    width: 100%;
+}
+header .logo{
+    width: clamp(5rem, 20vw, 10rem);
+    padding: 5vh var(--padding-side-mobile);
 }
 
 nav{
-    
+    display: none;
 }
-
-
 
 #Home{
     height: 100vh;
@@ -112,23 +141,54 @@ nav{
     height: auto;
 }
 
-header {
-    position: absolute;
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.flex-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.flex-row div{
+    font-weight: 900;
+    text-align: center;
+    box-shadow: 0px 0px 20px var(--color-01);
+}
+
+.flex-row div:nth-child(odd){
+    background-color: var(--color-01);
+    color: var(--color-03);
+    border-radius: 5px;
+    padding: .5rem;
+}
+
+.flex-row:nth-child(odd) div:nth-child(odd){
+    background-color: var(--color-03);
+    color: var(--color-02);
 }
 
 
 
-/* Typography */
+/* =====================================*/
+/* 4. Typography */
+/* =====================================*/
 
 h2 {
     font-family: var(--font-family_01), sans-serif;
     color: var(--color-04);
     font-size: 4rem; 
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 p{
-    width: clamp(20ch, 90vw, 100ch);
+    width: clamp(20ch, 90vw, 80ch);
     margin: 0 auto;
     text-align: center;
     line-height: 1.8rem;
