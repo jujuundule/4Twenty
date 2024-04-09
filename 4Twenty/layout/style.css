@@ -1,0 +1,127 @@
+
+/*
+/* Made by Juliane Träger
+/*
+/* =====================================*/
+/* TABLE OF CONTENTS
+/* =====================================*/
+/*
+/* 1. Imports
+/* 2. Variables
+
+
+
+/* =====================================*/
+
+/* 1. Imports */
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Viper Nora';
+    src: url('fonts/viper_nora.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Viper Nora';
+    src: url('fonts/Avenir_Next.ttc') format('tcc');
+}
+
+
+/* 2. Variables */
+
+
+/* Colors */
+
+:root {
+    --color-01: #000;
+    --color-02: #262626;
+    --color-03: #FFFFFF;
+    --color-04: #AAAAAA;
+
+    /* Light Line */
+    --color-LL_01: #B6DDDB;
+    --color-LL_02: #D6E4AE;
+    --color-LL_03: #FFECA9;
+    --color-LL_04: #C9C5E3;
+    --color-LL_05: #FAC88B;
+
+    /* Core Line */
+    --color-CL_01: #F39CA2;
+    --color-CL_02: #83D0F5;
+    --color-CL_03: #FFF271;
+    --color-CL_04: #F7931E;
+    --color-CL_05: #8EC89A;
+}
+
+/* Typography */
+
+:root {
+    --font-family_01: 'Viper Nora';
+    --font-family_02: 'Avenir Next';
+}
+
+/* Spacing */
+
+/* Layout */
+*{
+    box-sizing: border-box;
+}
+
+body *{
+    color: var(--color-03);
+    font-family: var(--font-family_02), sans-serif;
+    line-height: 1.8rem;
+}
+
+body{
+    background-color: var(--color-01);
+}
+
+#Home,
+#Produkte,
+#Sorten-LL,
+#Sorten-CL,
+#Kunden{
+    background: url('../mediafiles/cracked_asphalt_seamless_pattern.webp') repeat;
+    background-size: cover;
+  
+}
+
+#Home{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+#Home img{
+    width: clamp(20rem, 50vw, 30rem);
+    height: auto;
+}
+
+header {
+    position: absolute;
+}
+
+
+
+/* Typography */
+
+h2 {
+    font-family: var(--font-family_01), sans-serif;
+    color: var(--color-04);
+    font-size: 4rem; 
+    text-align: center;
+    margin: 2rem 0 5rem 0;
+}
+
+p{
+    width: clamp(20ch, 90vw, 100ch);
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+
+
