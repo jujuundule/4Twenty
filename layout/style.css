@@ -65,12 +65,13 @@
     --font-family_02: 'Avenir Next';
 
     --font-weight-bold: 700;
+    --font-weight-medium: 500;
     --font-weight-thin: 100;
 
     --font-size-p-mobile: 1rem;
     --font-size-b-mobile: 1.3rem;
-    --font-size-h2-mobile: 4rem;
-    --font-size-h3-mobile: 1.8rem;
+    --font-size-h2-mobile: clamp(2rem, 15vw, 4rem);
+    --font-size-h3-mobile: clamp(1rem, 10vw, 1.8rem);
     --font-size-nav-mobile: 2rem;
 
     --line-height-mobile: calc(var(--font-size-p-mobile) * 1.8);
@@ -91,8 +92,7 @@
 body *{
     color: var(--color-03);
     font-family: var(--font-family_02), sans-serif;
-    word-wrap: break-word;
-    hyphens: auto;
+    hyphens:auto;
 }
 
 h2 {
@@ -130,6 +130,11 @@ p{
 
 .flavors-overview p{
     text-transform: uppercase;
+}
+
+.testimonial p{
+    color: var(--color-01);
+    font-weight: var(--font-weight-medium);
 }
 
 .main-nav a{
@@ -251,7 +256,7 @@ section{
     background-size: contain, 100vw;
     background-repeat: no-repeat, repeat;
     background-position: top, bottom;
-    padding: 20vh var(--padding-side-mobile);
+    padding: 10vh 0;
 }
 
 .bg-divider-top-bottom{
@@ -259,7 +264,7 @@ section{
     background-size: contain, contain, 100vw;
     background-repeat: no-repeat, no-repeat, repeat;
     background-position: top, bottom, bottom;
-    padding: 20vh 0;
+    padding: 10vh 0;
 }
 
 .bg-gradient{
@@ -280,6 +285,8 @@ section{
     max-width: 30rem;
 }
 
+/* Wirkstoff */
+
 .flex-container{
     display: flex;
     flex-direction: column;
@@ -292,6 +299,7 @@ section{
 .flex-row{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
@@ -312,7 +320,7 @@ section{
     color: var(--color-02);
 }
 
-/* Produkt */
+/* Produkte */
 
 #Produkte .flex-container{
     gap: 1.8rem;
@@ -342,18 +350,21 @@ section{
     height: 1px;
 }
 
-.flavors-overview .slider{
+.slider{
     display: flex;
     flex-direction: row;
     overflow: scroll;
 }
 
-.flavors-overview .slider-element{
+.slider-element{
     min-width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
     align-items: center;
+}
+
+.flavors-overview .slider-element{
+    gap: 4rem;
 }
 
 .flavors-overview .circle{
@@ -431,6 +442,65 @@ section{
     background-color: var(--color-CL_05);
 }
 
+/* Kunden */
+
+#Kunden .slider-element{
+    gap: 2rem;
+}
+
+#Kunden .customer-profile{
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#Kunden .profile-pic{
+    position: relative;
+    background-color: var(--color-04);
+    border-radius: var(--border-radius-02);
+    overflow: hidden;
+    width: 20vw;
+    aspect-ratio: 1/1;
+}
+
+.customer-profile img{
+    position: absolute;
+    bottom: -25%;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+}
+
+#Kunden .testimonial{
+    position: relative;
+    background-color: var(--color-03);
+    padding: 1rem;
+    width: 60vw;
+    border-radius: var(--border-radius-01);
+    opacity: 60%;
+}
+
+#Kunden .testimonial::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    transform: translateY(99%);
+    width: 5vw;
+    aspect-ratio: 4/5;
+    background-color: var(--color-03);
+    clip-path: polygon(100% 100%, 0 0, 100% 0);
+}
+
+#Kunden .rating{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+
 /* =====================================*/
 /*              5. Buttons */
 /* =====================================*/
@@ -464,9 +534,9 @@ section{
     color: var(--color-01);
 }
 
-/* =====================================*/
-/*              6. Slider               */
-/* =====================================*/
+
+
+
 
 
 
