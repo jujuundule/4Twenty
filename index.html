@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
+    <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="mediafiles/favicon.png">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="layout/reset.css">
     <link rel="stylesheet" href="layout/style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="mediafiles/favicon_64x64.ico" type="image/x-icon">
+    <!-- Title -->
     <title>4Twenty</title>
   </head>
   <body>
@@ -82,7 +86,7 @@
                 <!-- 1 ml technische Daten -->
                 <div id="TD_1ml" class="flex-container hidden">
                     <div>
-                        1,4<br><b>Keramik Coil</b>
+                        1,4 Ω<br><b>Keramik Coil</b>
                     </div>
                     <div>
                         320 mAh<br><b>Batterie</b>
@@ -101,7 +105,7 @@
                 <!-- 2 ml technische Daten -->
                 <div id="TD_2ml" class="flex-container">
                     <div>
-                        1,4<br><b>Keramik Coil</b>
+                        1,4 Ω<br><b>Keramik Coil</b>
                     </div>
                     <div>
                         320 mAh<br><b>Batterie</b>
@@ -118,20 +122,154 @@
                     <img src="mediafiles/mobile/4twenty_vape_2ml.webp" alt="4Twenty Vape 2ml">
                 </div>
             </section>
-            <section id="Sorten-LL">
+            <section id="Sorten-LL" class="flavors-overview">
                 <h2>Light Line</h2>
-                <div>15%<span>THC-P</span></div>
+                <!-- Intensität -->
+                <div class="intensity-display">
+                    <div class="line"></div>
+                    <div><b>15%</b><br>THC-P</div>
+                    <div class="line"></div>
+                </div>
                 <!-- Sorten Slider -->
+                <div class="slider">
+                    <div class="slider-element">
+                        <div class="circle">
+                            <img src="mediafiles/icons/light-line/Zkittles.svg" alt="Johnny Icon Zkittles">
+                        </div>
+                        <div class="description">
+                            <h4>Zkittles</h4>
+                            <div class="leaf">
+                                <img src="mediafiles/icons/cannabis-sorten/Hybrid.svg" alt="Canabis Blatt Hybrid-Sorte">
+                                <p>Hybrid</p>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="slider-element">
+                        <div class="circle">
+                            <img src="mediafiles/icons/light-line/Limette_+_Minze.svg" alt="Johnny Icon Limette + Minze">
+                        </div>
+                        <div class="description">
+                            <h4>Limette + Minze</h4>
+                            <div class="leaf">
+                                <img src="mediafiles/icons/cannabis-sorten/Sativa.svg" alt="Canabis Blatt Sativa-Sorte">
+                                <p>Sativa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-element">
+                        <div class="circle">
+                            <img src="mediafiles/icons/light-line/Exotische Fruechte_+_Ananas.svg" alt="Johnny Icon Exotische Früchte + Ananas">
+                        </div>
+                        <div class="description">
+                            <h4>Exotische Früchte + Ananas</h4>
+                            <div class="leaf">
+                                <img src="mediafiles/icons/cannabis-sorten/Indica.svg" alt="Canabis Blatt Indica-Sorte">
+                                <p>Indica</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-element">
+                        <div class="circle">
+                            <img src="mediafiles/icons/light-line/Black Fruits_+_Acai.svg" alt="Johnny Icon Blackfruits + Açai">
+                        </div>
+                        <div class="description">
+                            <h4>Blackfruits + Açai</h4>
+                            <div class="leaf">
+                                <img src="mediafiles/icons/cannabis-sorten/Sativa.svg" alt="Canabis Blatt Sativa-Sorte">
+                                <p>Sativa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-element">
+                        <div class="circle">
+                            <img src="mediafiles/icons/light-line/Bienenstich_+_Vanille.svg" alt="Johnny Icon Bienenstich + Vanilles">
+                        </div>
+                        <div class="description">
+                            <h4>Bienenstich + Vanille</h4>
+                            <div class="leaf">
+                                <img src="mediafiles/icons/cannabis-sorten/Indica.svg" alt="Canabis Blatt Indica-Sorte">
+                                <p>Indica</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
         <section id="Produkte-LL">
             <!-- Produkt Slider -->
         </section>
         <div class="bg-divider-top-bottom">
-            <section id="Sorten-CL">
+            <section id="Sorten-CL" class="flavors-overview">
                 <h2>Core Line</h2>
-                <div>30%<span>THC-P</span></div>
+                <!-- Intensität -->
+                <div class="intensity-display">
+                    <div class="line"></div>
+                    <div><b>30%</b><br>THC-P</div>
+                    <div class="line"></div>
+                </div>
                 <!-- Sorten Slider -->
+                <div class="slider">
+                    <div class="slider-element">
+                        <div class="circle">
+                            <img src="mediafiles/icons/core-line/Wedding_Cake.svg" alt="Johnny Icon Wedding Cake">
+                        </div>
+                        <div class="description">
+                            <h4>Wedding Cake</h4>
+                            <div class="leaf">
+                                <img src="mediafiles/icons/cannabis-sorten/Indica.svg" alt="Canabis Blatt Indica-Sorte">
+                                <p>Indica</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-element">
+                        <div class="circle">
+                            <img src="mediafiles/icons/core-line/Obama_Kush.svg" alt="Johnny Icon Obama Kush">
+                        </div>
+                        <div class="description">
+                            <h4>Obama Kush</h4>
+                            <div class="leaf">
+                                <img src="mediafiles/icons/cannabis-sorten/Indica.svg" alt="Canabis Blatt Indica-Sorte">
+                                <p>Indica</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-element">
+                        <div class="circle">
+                            <img src="mediafiles/icons/core-line/Lemon_Runtz.svg" alt="Johnny Icon Lmn Runtz">
+                        </div>
+                        <div class="description">
+                            <h4>Lmn Runtz</h4>
+                            <div class="leaf">
+                                <img src="mediafiles/icons/cannabis-sorten/Sativa.svg" alt="Canabis Blatt Sativa-Sorte">
+                                <p>Sativa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-element">
+                        <div class="circle">
+                            <img src="mediafiles/icons/core-line/Ghost_Train_Haze.svg" alt="Johnny Icon Ghost Train Haze">
+                        </div>
+                        <div class="description">
+                            <h4>Ghost Train Haze</h4>
+                            <div class="leaf">
+                                <img src="mediafiles/icons/cannabis-sorten/Hybrid.svg" alt="Canabis Blatt Hybrid-Sorte">
+                                <p>Hybrid</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-element">
+                        <div class="circle">
+                            <img src="mediafiles/icons/core-line/Amnesia.svg" alt="Johnny Icon Amnesia">
+                        </div>
+                        <div class="description">
+                            <h4>Amnesia</h4>
+                            <div class="leaf">
+                                <img src="mediafiles/icons/cannabis-sorten/Sativa.svg" alt="Canabis Blatt Sativa-Sorte">
+                                <p>Sativa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
         <section id="Produkte-CL">
