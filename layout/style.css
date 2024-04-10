@@ -1,20 +1,16 @@
+/* =====================================*/
+/*          TABLE OF CONTENTS
+/* =====================================*/
 
-/*
-/* Made by Juliane Träger
-/*
-/* =====================================*/
-/* TABLE OF CONTENTS
-/* =====================================*/
-/*
 /* 1. Imports
 /* 2. Variables
-/* 3. Layout
-/* 4. Typography
-
+/* 3. Typography
+/* 4. Layout
+/* 5. Buttons
 
 
 /* =====================================*/
-/* 1. Imports */
+/*              1. Imports */
 /* =====================================*/
 
 /* Fonts */
@@ -29,142 +25,270 @@
     src: url('../fonts/Avenir_Next.ttc') format('tcc');
 }
 
-/* =====================================*/
-/* 2. Variables */
-/* =====================================*/
 
-/* Colors */
+/* =====================================*/
+/*              2. Variables */
+/* =====================================*/
 
 :root {
+
+    /* Colors General*/
     --color-01: #000;
     --color-02: #262626;
     --color-03: #FFFFFF;
     --color-04: #AAAAAA;
 
-    /* Gradients */
-    --gradient-01: radial-gradient(circle, rgba(38,38,38,1) 0%, rgba(0,0,0,1) 100%);
-
-    /* Light Line */
+    /* Colors Light Line */
     --color-LL_01: #B6DDDB;
     --color-LL_02: #D6E4AE;
     --color-LL_03: #FFECA9;
     --color-LL_04: #C9C5E3;
     --color-LL_05: #FAC88B;
 
-    /* Core Line */
+    /* Colors Core Line */
     --color-CL_01: #F39CA2;
     --color-CL_02: #83D0F5;
     --color-CL_03: #FFF271;
     --color-CL_04: #F7931E;
     --color-CL_05: #8EC89A;
-}
 
-/* Typography */
+    /* Gradients */
+    --gradient-01: radial-gradient(circle, rgba(38,38,38,1) 0%, rgba(0,0,0,1) 100%);
 
-:root {
+    /* Box-shadow */
+    --shadow-01: 5px 5px 10px var(--color-01);
+
+    /* Typography */
+    font-size: 16px; /* 1rem = 16px */
+
     --font-family_01: 'Viper Nora';
     --font-family_02: 'Avenir Next';
-}
 
-/* Spacing */
+    --font-weight-bold: 700;
+    --font-weight-thin: 100;
 
-:root {
-    --padding-side-mobile: 1rem;
+    --font-size-p-mobile: 1rem;
+    --font-size-b-mobile: 1.3rem;
+    --font-size-h2-mobile: 4rem;
+    --font-size-h3-mobile: 1.8rem;
+    --font-size-nav-mobile: 2rem;
+
+    --line-height-mobile: calc(var(--font-size-p-mobile) * 1.8);
+
+    /* Spacing */
+    --padding-side-mobile: 30px;
     --gap-mobile: 60px;
+
+    /* Border Radius */
+    --border-radius-01: 5px;
+    --border-radius-02: 500px;
 }
 
 /* =====================================*/
-/* 3. Layout */
+/*             3. Typography */
 /* =====================================*/
 
 body *{
     color: var(--color-03);
     font-family: var(--font-family_02), sans-serif;
+    word-wrap: break-word;
+    hyphens: auto;
 }
+
+h2 {
+    font-family: var(--font-family_01), sans-serif;
+    color: var(--color-04);
+    font-size: var(--font-size-h2-mobile); 
+    text-align: center;
+    margin-bottom: 1rem;
+    
+}
+
+h3 {
+    font-size: var(--font-size-h3-mobile); 
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+p{
+    font-size: var(--font-size-p-mobile);
+    line-height: var(--line-height-mobile);
+    width: clamp(20ch, 90vw, 60ch);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main-nav a{
+    font-size: var(--font-size-nav-mobile);
+    color: var(--color-03);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+}
+
+b{
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-b-mobile);
+    text-transform: uppercase;
+    line-height: calc(var(--font-size-b-mobile) * 2);
+}
+
+
+/* =====================================*/
+/*              4. Layout */
+/* =====================================*/
+
+/* General */
 
 body{
     background-color: var(--color-01);
-    position: relative;
 }
+
+.hidden{
+    display: none !important; /* Hide elements */
+}
+
+/* Header/ Navigation */
+
+header {
+    position: fixed;
+    width: 100vw;
+    -webkit-backdrop-filter: blur(15px) brightness(60%);
+    backdrop-filter: blur(15px) brightness(60%);
+    z-index: 9999;
+}
+
+.navbar {
+    height: 10vh;
+    padding: 0 var(--padding-side-mobile);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+header .logo{
+    width: clamp(5rem, 25vw, 10rem);
+}
+
+.burger{
+    width: 40px;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.burger.close-nav .line:nth-child(1){
+    transform: rotate(45deg) translateY(20px);
+}
+
+.burger.close-nav .line:nth-child(2){
+    opacity: 0;
+}
+
+.burger.close-nav .line:nth-child(3){
+    transform: rotate(-45deg) translateY(-20px);
+}
+
+.burger .line{
+    background-color: var(--color-03);
+    width: 100%;
+    height: 8%;
+    border-radius: var(--border-radius-01);
+}
+
+.main-nav{
+   height: 90vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+}
+
+.main-nav ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Sections General */
 
 section{
     display: flex;
     flex-direction: column;
     gap: var(--gap-mobile);
-}
-
-#Home,
-#Produkte,
-#Sorten-LL,
-#Sorten-CL,
-#Kunden{
-    background: url('../mediafiles/cracked_asphalt_seamless_pattern.webp') repeat;
-    background-size: cover;
     padding: 10vh 0;
 }
 
-#Wirkstoff,
-#Produkte-LL,
-#Produkte-CL{
-    background-image: var(--gradient-01); /* Fallback */
-    background-image: url('../mediafiles/cracked_asphalt_mobile_oben.webp'), url('../mediafiles/cracked_asphalt_mobile_unten.webp'); /*Fallback*/
+.bg-divider-bottom{
+    background-image: url('../mediafiles/mobile/cracked_asphalt_inverted_unten.webp'), url('../mediafiles/mobile/patterns/cracked_asphalt_seamless_pattern.webp');
+    background-size: contain, 100vw;
+    background-repeat: no-repeat, repeat;
     background-position: bottom, top;
-    background-image: url('../mediafiles/cracked_asphalt_mobile_oben.webp'), url('../mediafiles/cracked_asphalt_mobile_unten.webp'), var(--gradient-01);
-    background-position: bottom, top, center;
-    background-size: 100vw;
-    background-repeat: no-repeat;
-    padding: 30% 0;
-}
-header {
-    position: fixed;
-
-    backdrop-filter: blur(15px) brightness(60%);
-    width: 100%;
-}
-header .logo{
-    width: clamp(5rem, 20vw, 10rem);
-    padding: 5vh var(--padding-side-mobile);
 }
 
-nav{
-    display: none;
+.bg-divider-top{
+    background-image: url('../mediafiles/mobile/cracked_asphalt_inverted_oben.webp'), url('../mediafiles/mobile/patterns/cracked_asphalt_seamless_pattern.webp');
+    background-size: contain, 100vw;
+    background-repeat: no-repeat, repeat;
+    background-position: top, bottom;
+    padding: 20vh 0;
 }
+
+.bg-divider-top-bottom{
+    background-image: url('../mediafiles/mobile/cracked_asphalt_inverted_oben.webp'), url('../mediafiles/mobile/cracked_asphalt_inverted_unten.webp'), url('../mediafiles/mobile/patterns/cracked_asphalt_seamless_pattern.webp');
+    background-size: contain, contain, 100vw;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-position: top, bottom, bottom;
+    padding: 20vh 0;
+}
+
+.bg-gradient{
+    background-image: var(--gradient-01);
+}
+
+/* Home */
 
 #Home{
     height: 100vh;
+    padding: 0;
     display: grid;
     place-items: center;
 }
 
 #Home img{
-    width: clamp(20rem, 50vw, 30rem);
-    height: auto;
+    width: 75vw;
+    max-width: 30rem;
+    transform: translateY(-10vh);
 }
 
 .flex-container{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
+    text-align: center;
 }
 
 .flex-row{
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 1rem;
 }
 
 .flex-row div{
-    font-weight: 900;
-    text-align: center;
-    box-shadow: 0px 0px 20px var(--color-01);
+    font-weight: var(--font-weight-bold);
+    box-shadow: var(--shadow-01);
 }
 
 .flex-row div:nth-child(odd){
     background-color: var(--color-01);
     color: var(--color-03);
-    border-radius: 5px;
+    border-radius: var(--border-radius-01);
     padding: .5rem;
 }
 
@@ -173,26 +297,56 @@ nav{
     color: var(--color-02);
 }
 
+/* Produkt */
+
+#Produkte .flex-container{
+    gap: 1.8rem;
+}
+
+#Produkte .flex-container div{
+    font-size: var(--font-size-p-mobile);
+}
+
+#Produkte img{
+    filter: drop-shadow(var(--shadow-01));
+    width: 100%;
+}
 
 
 /* =====================================*/
-/* 4. Typography */
+/*              5. Buttons */
 /* =====================================*/
 
-h2 {
-    font-family: var(--font-family_01), sans-serif;
-    color: var(--color-04);
-    font-size: 4rem; 
-    text-align: center;
-    margin-bottom: 1rem;
+.button-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    filter: drop-shadow(var(--shadow-01));
 }
 
-p{
-    width: clamp(20ch, 90vw, 80ch);
-    margin: 0 auto;
-    text-align: center;
-    line-height: 1.8rem;
+.button-container button{
+    background-color: var(--color-01);
+    color: var(--color-03);
+    padding: 1rem 2rem;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-p-mobile);
+    text-transform: uppercase;
+    
 }
+
+.button-container button:nth-child(1){
+    border-radius: var(--border-radius-02) 0 0 var(--border-radius-02);
+}
+
+.button-container button:nth-child(2){
+    border-radius: 0 var(--border-radius-02) var(--border-radius-02) 0;
+}
+
+.button-container button.active{
+    background-color: var(--color-03);
+    color: var(--color-01);
+}
+
 
 
 
