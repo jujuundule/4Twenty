@@ -118,7 +118,10 @@ h4{
     font-weight: var(--font-weight-bold);
     text-align: center;
     margin-bottom: 1rem;
+}
 
+.product-slider h4{
+    margin: 0;
 }
 
 p{
@@ -135,6 +138,14 @@ p{
 .testimonial p{
     color: var(--color-01);
     font-weight: var(--font-weight-medium);
+}
+
+.product-slider p{
+    text-transform: uppercase;
+}
+
+.effect-visualization p{
+    text-transform: uppercase;
 }
 
 .main-nav a{
@@ -156,6 +167,10 @@ b{
     font-size: calc(var(--font-size-b-mobile) * 2);
 }
 
+.effect-visualization b{
+    line-height: var(--line-height-mobile);
+}
+
 /* =====================================*/
 /*              4. Layout */
 /* =====================================*/
@@ -164,6 +179,9 @@ b{
 
 body{
     background-color: var(--color-01);
+}
+img{
+    width: 100%;
 }
 
 .hidden{
@@ -245,14 +263,14 @@ section{
 }
 
 .bg-divider-bottom{
-    background-image: url('../mediafiles/mobile/cracked_asphalt_inverted_unten.webp'), url('../mediafiles/mobile/patterns/cracked_asphalt_seamless_pattern.webp');
+    background-image: url('../mediafiles/divider/cracked_asphalt_inverted_unten.svg'), url('../mediafiles/mobile/patterns/cracked_asphalt_seamless_pattern.webp');
     background-size: contain, 100vw;
     background-repeat: no-repeat, repeat;
     background-position: bottom, top;
 }
 
 .bg-divider-top{
-    background-image: url('../mediafiles/mobile/cracked_asphalt_inverted_oben.webp'), url('../mediafiles/mobile/patterns/cracked_asphalt_seamless_pattern.webp');
+    background-image: url('../mediafiles/divider/cracked_asphalt_inverted_oben.svg'), url('../mediafiles/mobile/patterns/cracked_asphalt_seamless_pattern.webp');
     background-size: contain, 100vw;
     background-repeat: no-repeat, repeat;
     background-position: top, bottom;
@@ -260,7 +278,7 @@ section{
 }
 
 .bg-divider-top-bottom{
-    background-image: url('../mediafiles/mobile/cracked_asphalt_inverted_oben.webp'), url('../mediafiles/mobile/cracked_asphalt_inverted_unten.webp'), url('../mediafiles/mobile/patterns/cracked_asphalt_seamless_pattern.webp');
+    background-image: url('../mediafiles/divider/cracked_asphalt_inverted_oben.svg'), url('../mediafiles/divider/cracked_asphalt_inverted_unten.svg'), url('../mediafiles/mobile/patterns/cracked_asphalt_seamless_pattern.webp');
     background-size: contain, contain, 100vw;
     background-repeat: no-repeat, no-repeat, repeat;
     background-position: top, bottom, bottom;
@@ -299,23 +317,35 @@ section{
 .flex-row{
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     gap: 1rem;
 }
 
-.flex-row div{
+.comparison .flex-row{
+    flex-wrap: wrap;
+}
+
+.flex-row-element{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.flex-row-element img{
+    height: 5rem;
+}
+.comparison div{
     font-weight: var(--font-weight-bold);
     box-shadow: var(--shadow-01);
 }
 
-.flex-row div:nth-child(odd){
+.comparison div:nth-child(odd){
     background-color: var(--color-01);
     color: var(--color-03);
     border-radius: var(--border-radius-01);
     padding: .5rem;
 }
 
-.flex-row:nth-child(odd) div:nth-child(odd){
+.comparison .flex-row:nth-child(odd) div:nth-child(odd){
     background-color: var(--color-03);
     color: var(--color-02);
 }
@@ -332,6 +362,7 @@ section{
 
 #Produkte img{
     filter: drop-shadow(var(--shadow-01));
+    margin-top: 2rem;
     width: 100%;
 }
 
@@ -354,6 +385,7 @@ section{
     display: flex;
     flex-direction: row;
     overflow: scroll;
+    overflow-y: hidden;
 }
 
 .slider-element{
@@ -361,6 +393,24 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.dots{
+    display: flex;
+    gap: .8rem;
+    justify-content: center
+}
+
+.dot{
+    width: .8rem;
+    aspect-ratio: 1/1;
+    background-color: var(--color-03);
+    border-radius: 50%;
+    opacity: 50%;
+}
+
+.dot.active{
+    opacity: 100%;
 }
 
 .flavors-overview .slider-element{
@@ -440,6 +490,16 @@ section{
 
 #Sorten-CL .slider-element:nth-child(5) .circle{
     background-color: var(--color-CL_05);
+}
+
+/* Produkte */
+
+.product-slider .slider-element{
+    gap: 2rem;
+}
+
+.product-slider .slider{
+    gap: 20vw;
 }
 
 /* Kunden */
@@ -532,6 +592,15 @@ section{
 .button-container button.active{
     background-color: var(--color-03);
     color: var(--color-01);
+}
+
+.btn-01 {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+    padding: 1rem 5vw;
+    border: 1px solid var(--color-03);
 }
 
 
