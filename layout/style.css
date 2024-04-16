@@ -7,6 +7,7 @@
 /* 3. Typography
 /* 4. Layout
 /* 5. Buttons
+/* 6. Media Queries */
 
 
 /* =====================================*/
@@ -72,6 +73,7 @@
     --font-size-b-mobile: 1.3rem;
     --font-size-h2-mobile: clamp(2rem, 15vw, 4rem);
     --font-size-h3-mobile: clamp(1rem, 10vw, 1.8rem);
+    --font-size-h4-mobile: clamp(.8rem, 10vw, 1.5rem);
     --font-size-nav-mobile: 2rem;
 
     --line-height-mobile: calc(var(--font-size-p-mobile) * 1.8);
@@ -102,7 +104,6 @@ h2 {
     font-size: var(--font-size-h2-mobile); 
     text-align: center;
     margin-bottom: 1rem;
-    
 }
 
 h3 {
@@ -114,15 +115,10 @@ h3 {
 }
 
 h4{
-    font-size: var(--font-size-b-mobile);
+    font-size: var(--font-size-h4-mobile);
     text-transform: uppercase;
     font-weight: var(--font-weight-bold);
     text-align: center;
-    margin-bottom: 1rem;
-}
-
-.product-slider h4{
-    margin: 0;
 }
 
 p{
@@ -132,20 +128,12 @@ p{
     text-align: center;
 }
 
-.flavors-overview p{
-    text-transform: uppercase;
-}
-
 .testimonial p{
     color: var(--color-01);
     font-weight: var(--font-weight-medium);
 }
 
-.product-slider p{
-    text-transform: uppercase;
-}
-
-.effect-visualization p{
+.uppercase{
     text-transform: uppercase;
 }
 
@@ -168,10 +156,6 @@ b{
     font-size: calc(var(--font-size-b-mobile) * 2);
 }
 
-.effect-visualization b{
-    line-height: var(--line-height-mobile);
-}
-
 /* =====================================*/
 /*              4. Layout */
 /* =====================================*/
@@ -188,6 +172,58 @@ img{
 
 .hidden{
     display: none !important; /* Hide elements */
+}
+
+/* Scrollbar */
+
+body *::-webkit-scrollbar {
+    display: none;
+}
+
+body * {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Preloader */
+
+#preloader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-01);
+    display: grid;
+    place-items: center;
+    z-index: 99999;
+    overflow: hidden;
+}
+
+#preloader svg{
+    width: 50vw;
+    max-width: 200px;
+}
+
+#preloader svg .outer{
+    transform-origin: center;
+    animation: rotate 10s linear infinite;
+}
+
+/* Preloader Animation*/
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#outer{
+    transform: rotate(20deg);
+    transform-origin: center;
 }
 
 /* Header/ Navigation */
@@ -220,15 +256,15 @@ header .logo{
     justify-content: space-around;
 }
 
-.burger.close-nav .line:nth-child(1){
+.burger.active .line:nth-child(1){
     transform: rotate(45deg);
 }
 
-.burger.close-nav .line:nth-child(2){
+.burger.active .line:nth-child(2){
     opacity: 0;
 }
 
-.burger.close-nav .line:nth-child(3){
+.burger.active .line:nth-child(3){
     transform: rotate(-45deg);
 }
 
@@ -263,8 +299,8 @@ section{
     gap: var(--gap-mobile);
     padding: 10vh var(--padding-side-mobile);
     max-width: var(--max-width);
-    width: 100%;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .bg-divider-bottom{
@@ -292,7 +328,22 @@ section{
 
 /* wird nicht mehr verwendet*/
 .bg-gradient{
-    background-image: var(--gradient-01);
+    position: relative;
+}
+
+.bg-gradient::before{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 40vw;
+    width: 100%;
+    max-width: 500px;
+    background-image: url("../mediafiles/svg/thc-p_chemical_compound.svg");
+    background-repeat: no-repeat;
+    opacity: 30%;
+    z-index: -1;
+    transform: rotate(-20deg) translateX(-50%);
 }
 
 /* Home */
@@ -304,15 +355,20 @@ section{
     place-items: center;
 }
 
-#Home img{
+#slogan{
     width: 75vw;
     max-width: 30rem;
+}
+
+#slogan-outer{
+    transform-origin: center;
 }
 
 /* Wirkstoff */
 
 #Wirkstoff{
     position: relative;
+    overflow-x: hidden;
 }
 
 .thc-p_chemical_compound{
@@ -336,7 +392,8 @@ section{
 .flex-row{
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .comparison .flex-row{
@@ -374,18 +431,17 @@ section{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    padding: 5vh 0;
 }
 
 /*Media Querie */
-@media only screen and (max-width: 330px){
+@media only screen and (max-width: 300px){
     .effect-visualization{
         background-image: none;
     }
 }
 
 .effect-visualization .flex-row{
-    width: 100%;
-    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -425,11 +481,40 @@ section{
     height: 1px;
 }
 
+.slider-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
 .slider{
     display: flex;
     flex-direction: row;
     overflow: scroll;
     overflow-y: hidden;
+    
+}
+
+.slider-container::after,
+.slider-container::before{
+    content: '';
+    width: 10vw;
+    max-width: 50px;
+    aspect-ratio: 1/1;
+    background-image: url('../mediafiles/svg/arrow.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position:absolute;
+    top: 60%;
+    right: 0;
+}
+
+.slider-container::before{
+    left: 0;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1); 
+    opacity: 50%;
 }
 
 .slider-element{
@@ -464,7 +549,7 @@ section{
 .flavors-overview .circle{
     position: relative;
     width: 50vw;
-    max-width: 300px;
+    max-width: 200px;
     aspect-ratio: 1/1;
     border-radius: 50%;
     box-shadow: var(--shadow-01);
@@ -567,6 +652,7 @@ section{
     border-radius: var(--border-radius-02);
     overflow: hidden;
     width: 20vw;
+    max-width: 150px;
     aspect-ratio: 1/1;
 }
 
@@ -581,8 +667,8 @@ section{
 #Kunden .testimonial{
     position: relative;
     background-color: var(--color-03);
+    width: 60%;
     padding: 1rem;
-    width: 60vw;
     border-radius: var(--border-radius-01);
     opacity: 60%;
 }
@@ -594,6 +680,7 @@ section{
     left: 20%;
     transform: translateY(99%);
     width: 5vw;
+    max-width: 40px;
     aspect-ratio: 4/5;
     background-color: var(--color-03);
     clip-path: polygon(100% 100%, 0 0, 100% 0);
@@ -647,6 +734,19 @@ section{
     padding: 1rem 5vw;
     border: 1px solid var(--color-03);
 }
+
+/* =====================================*/
+/*          6. Media Queries */
+/* =====================================*/
+
+/* Tablet */
+
+/* Desktop */
+
+@media screen and (min-width: 1024px){
+    
+}
+/* Large Desktop */
 
 
 
