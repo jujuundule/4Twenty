@@ -98,6 +98,10 @@ body *{
     hyphens:auto;
 }
 
+.no-scroll{
+    overflow: hidden;
+}
+
 h2 {
     font-family: var(--font-family_01), sans-serif;
     color: var(--color-04);
@@ -162,10 +166,18 @@ b{
 
 /* General */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: var(--color-01);
-    overflow-x: hidden;
 }
+
+main{
+    overflow: hidden;
+}
+
 img{
     width: 100%;
 }
@@ -274,13 +286,22 @@ header .logo{
     height: 8%;
     border-radius: var(--border-radius-01);
     transform-origin: 0 50% 0;
+    transition: all .5s ease;
 }
 
 .main-nav{
-   height: 90vh;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
+    width: 100vw;
+    height: 0vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: all .3s ease;
+    overflow: hidden;
+}
+
+.main-nav.active{
+    height: 90vh;
 }
 
 .main-nav ul{
@@ -292,6 +313,13 @@ header .logo{
 }
 
 /* Sections General */
+#Wirkstoff,
+#Produkte,
+#Sorten-LL,
+#Sorten-CL,
+#Kunden{
+    scroll-margin-top: 5vh;
+}
 
 section{
     display: flex;
@@ -300,7 +328,6 @@ section{
     padding: 10vh var(--padding-side-mobile);
     max-width: var(--max-width);
     margin: 0 auto;
-    overflow-x: hidden;
 }
 
 .bg-divider-bottom{
@@ -326,7 +353,6 @@ section{
     padding: 10vh 0;
 }
 
-/* wird nicht mehr verwendet*/
 .bg-gradient{
     position: relative;
 }
@@ -357,7 +383,7 @@ section{
 
 #slogan{
     width: 75vw;
-    max-width: 30rem;
+    max-width: 300px;
 }
 
 #slogan-outer{
@@ -368,7 +394,6 @@ section{
 
 #Wirkstoff{
     position: relative;
-    overflow-x: hidden;
 }
 
 .thc-p_chemical_compound{
@@ -434,6 +459,10 @@ section{
     padding: 5vh 0;
 }
 
+.effect-visualization .flex-row-element{
+    filter: drop-shadow(var(--shadow-01));
+}
+
 /*Media Querie */
 @media only screen and (max-width: 300px){
     .effect-visualization{
@@ -450,6 +479,33 @@ section{
     padding: 0 30%rem;
 }
 
+.effect-visualization img{
+    animation: levitate 3s infinite ease-in-out
+}
+@keyframes levitate {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.effect-visualization .flex-row-element:nth-child(1) img{
+    animation-delay: 0s;
+}
+
+.effect-visualization .flex-row-element:nth-child(2) img{
+    animation-delay: 0.5s;
+}
+
+.effect-visualization .flex-row-element:nth-child(3) img{
+    animation-delay: 1s;
+}
+
 /* Produkte */
 
 #Produkte .flex-container{
@@ -460,10 +516,21 @@ section{
     font-size: var(--font-size-p-mobile);
 }
 
-#Produkte img{
+.product-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: contain;
+    background-repeat: no-repeat;
     filter: drop-shadow(var(--shadow-01));
     margin-top: 2rem;
-    width: 100%;
+}
+
+.product-img.vape_1ml{
+    background-image: url('../mediafiles/mobile/product-images/vapes/4twenty_vape_1ml.webp');
+}
+
+.product-img.vape_2ml{
+    background-image: url('../mediafiles/mobile/product-images/vapes/4twenty_vape_2ml.webp');
 }
 
 /* Geschmackssorten Übersicht */
@@ -491,30 +558,28 @@ section{
 .slider{
     display: flex;
     flex-direction: row;
-    overflow: scroll;
-    overflow-y: hidden;
-    
+    overflow: auto;
+    scroll-snap-type: x mandatory; /*scroll-snap*/ 
+    scroll-behavior: smooth;
 }
 
-.slider-container::after,
-.slider-container::before{
-    content: '';
+.slider-container .slider-arrows{
+    position: absolute;
+    top: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+.slider-container .slider-arrows .arrow{
     width: 10vw;
     max-width: 50px;
     aspect-ratio: 1/1;
-    background-image: url('../mediafiles/svg/arrow.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    position:absolute;
-    top: 60%;
-    right: 0;
 }
 
-.slider-container::before{
-    left: 0;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1); 
-    opacity: 50%;
+.slider-container .slider-arrows .arrow:nth-child(1){
+    transform: scale(-1);
 }
 
 .slider-element{
@@ -522,6 +587,7 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
+    scroll-snap-align: start; /*scroll-snap*/
 }
 
 .dots{
@@ -628,8 +694,51 @@ section{
     gap: 2rem;
 }
 
-.product-slider .slider{
-    gap: 20vw;
+.product-slider .product-img{
+    aspect-ratio: 5/4;
+    margin: 0;
+}
+
+/* Light Line */
+#Produkte-LL .slider-element:nth-child(1) .product-img{
+    background-image: url('../mediafiles/mobile/product-images/light-line/4twenty_product-image_zkittles.webp');
+}
+
+#Produkte-LL .slider-element:nth-child(2) .product-img{
+    background-image: url('../mediafiles/mobile/product-images/light-line/4twenty_product-image_limette_+_minze.webp');
+}
+
+#Produkte-LL .slider-element:nth-child(3) .product-img{
+    background-image: url('../mediafiles/mobile/product-images/light-line/4twenty_product-image_exotische_fruechte_+_ananas.webp');
+}
+
+#Produkte-LL .slider-element:nth-child(4) .product-img{
+    background-image: url('../mediafiles/mobile/product-images/light-line/4twenty_product-image_black_fruits_+_acai.webp');
+}
+
+#Produkte-LL .slider-element:nth-child(5) .product-img{
+    background-image: url('../mediafiles/mobile/product-images/light-line/4twenty_product-image_bienenstich_+_vanille.webp');
+}
+
+/* Core Line */
+#Produkte-CL .slider-element:nth-child(1) .product-img{
+    background-image: url('../mediafiles/mobile/product-images/core-line/4twenty_product-image_wedding-cake.webp');
+}
+
+#Produkte-CL .slider-element:nth-child(2) .product-img{
+    background-image: url('../mediafiles/mobile/product-images/core-line/4twenty_product-image_obama-kush.webp');
+}
+
+#Produkte-CL .slider-element:nth-child(3) .product-img{
+    background-image: url('../mediafiles/mobile/product-images/core-line/4twenty_product-image_lmn-runtz.webp');
+}
+
+#Produkte-CL .slider-element:nth-child(4) .product-img{
+    background-image: url('../mediafiles/mobile/product-images/core-line/4twenty_product-image_ghost-train-haze.webp');
+}
+
+#Produkte-CL .slider-element:nth-child(5) .product-img{
+    background-image: url('../mediafiles/mobile/product-images/core-line/4twenty_product-image_amnesia.webp');
 }
 
 /* Kunden */
@@ -740,13 +849,87 @@ section{
 /* =====================================*/
 
 /* Tablet */
+@media screen and (min-width: 480px){
 
-/* Desktop */
+    /* Hintergrundbilder */
+    body *{
+        color: red;
+    }
 
-@media screen and (min-width: 1024px){
+    .bg-divider-bottom{
+        background-image: url('../mediafiles/divider/cracked_asphalt_inverted_unten.svg'), url('../mediafiles/desktop/patterns/cracked_asphalt_seamless_pattern.webp');
+    }
+
+    .bg-divider-top{
+        background-image: url('../mediafiles/divider/cracked_asphalt_inverted_oben.svg'), url('../mediafiles/desktop/patterns/cracked_asphalt_seamless_pattern.webp');
+    }
+
+    .bg-divider-top-bottom{
+        background-image: url('../mediafiles/divider/cracked_asphalt_inverted_oben.svg'), url('../mediafiles/divider/cracked_asphalt_inverted_unten.svg'), url('../mediafiles/desktop/patterns/cracked_asphalt_seamless_pattern.webp');
+    }
+
+    /* Produktbilder */
+
+    /* Vapes */
+    .product-img.vape_1ml{
+        background-image: url('../mediafiles/desktop/product-images/vapes/4twenty_vape_1ml.webp');
+    }
     
+    .product-img.vape_2ml{
+        background-image: url('../mediafiles/desktop/product-images/vapes/4twenty_vape_2ml.webp');
+    }
+
+    /* Light Line */
+    #Produkte-LL .slider-element:nth-child(1) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_zkittles.webp');
+    }
+
+    #Produkte-LL .slider-element:nth-child(2) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_limette_+_minze.webp');
+    }
+
+    #Produkte-LL .slider-element:nth-child(3) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_exotische_fruechte_+_ananas.webp');
+    }
+
+    #Produkte-LL .slider-element:nth-child(4) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_black_fruits_+_acai.webp');
+    }
+
+    #Produkte-LL .slider-element:nth-child(5) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_bienenstich_+_vanille.webp');
+    }
+
+    /* Core Line */
+    #Produkte-CL .slider-element:nth-child(1) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_wedding-cake.webp');
+    }
+
+    #Produkte-CL .slider-element:nth-child(2) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_obama-kush.webp');
+    }
+
+    #Produkte-CL .slider-element:nth-child(3) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_lmn-runtz.webp');
+    }
+
+    #Produkte-CL .slider-element:nth-child(4) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_ghost-train-haze.webp');
+    }
+
+    #Produkte-CL .slider-element:nth-child(5) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_amnesia.webp');
+    }
 }
-/* Large Desktop */
+
+/* Desktop/ Tablet Landscape */
+
+@media screen and (min-width: 1024px) and (orientation: landscape){
+    body *{
+        color: green;
+    }
+}
+
 
 
 

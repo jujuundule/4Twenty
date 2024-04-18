@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Version 1.10 -->
+<!-- Version 1.11 -->
 
 <html lang="de">
   <head>
@@ -456,7 +456,9 @@
     <header>
         <div class="navbar">
             <!-- Logo -->
-            <img class="logo" src="mediafiles/svg/logo-4twenty_weiss.svg" alt="4Twenty Logo">
+            <a href="#">
+                <img class="logo" src="mediafiles/svg/logo-4twenty_weiss.svg" alt="4Twenty Logo">
+            </a>
             <!-- Nav Button -->
             <div class="burger" id="main-nav-btn">
                 <div class="line"></div>
@@ -465,15 +467,15 @@
             </div>
         </div>
         <!-- Navigation-->
-        <nav class="main-nav hidden" id="main-nav">
+        <nav class="main-nav" id="main-nav">
             <ul>
                 <li><a href="#Wirkstoff">Wirkstoff</a></li>
                 <li><a href="#Produkte">Produkte</a></li>
                 <li><a href="#Sorten-LL">Light Line</a></li>
                 <li><a href="#Sorten-CL">Core Line</a></li>
                 <li><a href="#Kunden">Kunden</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://ags-space.de/" target="_blank">Shop</a></li>
+                <li><a href="https://www.instagram.com/4twentyvape/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
             </ul>
             <p class="copyright">©2024 4Twenty</p>
         </nav>
@@ -1010,7 +1012,7 @@
                     <div>
                         USB-C<br><b>Anschluss</b>
                     </div>
-                    <img src="mediafiles/mobile/product-images/vapes/4twenty_vape_1ml.webp" alt="4Twenty Vape 1ml">
+                    <div class="product-img vape_1ml"></div>
                 </div>
                 <!-- 2 ml technische Daten -->
                 <div id="TD_2ml" class="flex-container hidden">
@@ -1029,7 +1031,7 @@
                     <div>
                         USB-C<br><b>Anschluss</b>
                     </div>
-                    <img src="mediafiles/mobile/product-images/vapes/4twenty_vape_2ml.webp" alt="4Twenty Vape 2ml">
+                    <div class="product-img vape_2ml"></div>
                 </div>
             </section>
             <section id="Sorten-LL" class="flavors-overview">
@@ -1042,6 +1044,11 @@
                 </div>
                 <!-- Sorten Slider -->
                 <div class="slider-container">
+                    <!-- Slider Pfeile -->
+                    <div class="slider-arrows">
+                        <img src="mediafiles/svg/arrow.svg" alt="Pfeil Links" class="arrow">
+                        <img src="mediafiles/svg/arrow.svg" alt="Pfeil Rechts" class="arrow">
+                    </div>
                     <div class="slider">
                         <div class="slider-element">
                             <div class="circle">
@@ -1117,9 +1124,14 @@
         <section id="Produkte-LL" class="product-slider">
             <!-- Produkt Slider -->
             <div class="slider-container">
+                <!-- Slider Pfeile -->
+                <div class="slider-arrows">
+                    <img src="mediafiles/svg/arrow.svg" alt="Pfeil Links" class="arrow">
+                    <img src="mediafiles/svg/arrow.svg" alt="Pfeil Rechts" class="arrow">
+                </div>
                 <div class="slider">
                     <div class="slider-element">
-                        <img src="mediafiles/mobile/product-images/light-line/4twenty_product-image_zkittles.webp" alt="Produktbild Zkittles" class="product-img">
+                        <div class="product-img"></div>
                         <div>
                             <h4>Zkittles</h4>
                             <p class="uppercase">Hybrid THC-P</p>
@@ -1127,7 +1139,7 @@
                         <a href="#" class="btn-01">Shop Now</a>
                     </div>
                     <div class="slider-element">
-                        <img src="mediafiles/mobile/product-images/light-line/4twenty_product-image_limette_+_minze.webp" alt="Produktbild Limette + Minze" class="product-img">
+                        <div class="product-img"></div>
                         <div>
                             <h4>Limette + Minze</h4>
                             <p class="uppercase">Sativa THC-P</p>
@@ -1135,7 +1147,7 @@
                         <a href="#" class="btn-01">Shop Now</a>
                     </div>
                     <div class="slider-element">
-                        <img src="mediafiles/mobile/product-images/light-line/4twenty_product-image_exotische_fruechte_+_ananas.webp" alt="Produktbild Exotische Früchte + Ananas" class="product-img">
+                        <div class="product-img"></div>
                         <div>
                             <h4>Exotische Früchte + Ananas</h4>
                             <p class="uppercase">Indica THC-P</p>
@@ -1143,7 +1155,7 @@
                         <a href="#" class="btn-01">Shop Now</a>
                     </div>
                     <div class="slider-element">
-                        <img src="mediafiles/mobile/product-images/light-line/4twenty_product-image_black_fruits_+_acai.webp" alt="Produktbild Zkittles" class="product-img">
+                        <div class="product-img"></div>
                         <div>
                             <h4>Blackfruits + Açai</h4>
                             <p class="uppercase">Sativa THC-P</p>
@@ -1151,7 +1163,7 @@
                         <a href="#" class="btn-01">Shop Now</a>
                     </div>
                     <div class="slider-element">
-                        <img src="mediafiles/mobile/product-images/light-line/4twenty_product-image_bienenstich_+_vanille.webp" alt="Produktbild Zkittles" class="product-img">
+                        <div class="product-img"></div>
                         <div>
                             <h4>Bienenstich + Vanille</h4>
                             <p class="uppercase">Indica THC-P</p>
@@ -1179,6 +1191,11 @@
                 </div>
                 <!-- Sorten Slider -->
                 <div class="slider-container">
+                    <!-- Slider Pfeile -->
+                    <div class="slider-arrows">
+                        <img src="mediafiles/svg/arrow.svg" alt="Pfeil Links" class="arrow">
+                        <img src="mediafiles/svg/arrow.svg" alt="Pfeil Rechts" class="arrow">
+                    </div>
                     <div class="slider">
                         <div class="slider-element">
                             <div class="circle">
@@ -1254,9 +1271,14 @@
         <section id="Produkte-CL" class="product-slider">
             <!-- Produkt Slider -->
             <div class="slider-container">
+                <!-- Slider Pfeile -->
+                <div class="slider-arrows">
+                    <img src="mediafiles/svg/arrow.svg" alt="Pfeil Links" class="arrow">
+                    <img src="mediafiles/svg/arrow.svg" alt="Pfeil Rechts" class="arrow">
+                </div>
                 <div class="slider">
                     <div class="slider-element">
-                        <img src="mediafiles/mobile/product-images/core-line/4twenty_product-image_wedding-cake.webp" alt="Produktbild Wedding Cake" class="product-img">
+                        <div class="product-img"></div>
                         <div>
                             <h4>Wedding Cake</h4>
                             <p class="uppercase">Indica THC-P</p>
@@ -1264,7 +1286,7 @@
                         <a href="#" class="btn-01">Shop Now</a>
                     </div>
                     <div class="slider-element">
-                        <img src="mediafiles/mobile/product-images/core-line/4twenty_product-image_obama-kush.webp" alt="Produktbild Obama Kush" class="product-img">
+                        <div class="product-img"></div>
                         <div>
                             <h4>Obama Kush</h4>
                             <p class="uppercase">Indica THC-P</p>
@@ -1272,7 +1294,7 @@
                         <a href="#" class="btn-01">Shop Now</a>
                     </div>
                     <div class="slider-element">
-                        <img src="mediafiles/mobile/product-images/core-line/4twenty_product-image_lmn-runtz.webp" alt="Produktbild Lmn Runtz" class="product-img">
+                        <div class="product-img"></div>
                         <div>
                             <h4>Lmn Runtz</h4>
                             <p class="uppercase">Sativa THC-P</p>
@@ -1280,7 +1302,7 @@
                         <a href="#" class="btn-01">Shop Now</a>
                     </div>
                     <div class="slider-element">
-                        <img src="mediafiles/mobile/product-images/core-line/4twenty_product-image_ghost-train-haze.webp" alt="Produktbild Ghost Train Haze" class="product-img">
+                        <div class="product-img"></div>
                         <div>
                             <h4>Ghost Train Haze</h4>
                             <p class="uppercase">Hybrid THC-P</p>
@@ -1288,7 +1310,7 @@
                         <a href="#" class="btn-01">Shop Now</a>
                     </div>
                     <div class="slider-element">
-                        <img src="mediafiles/mobile/product-images/core-line/4twenty_product-image_amnesia.webp" alt="Produktbild Amnesia" class="product-img">
+                        <div class="product-img"></div>
                         <div>
                             <h4>Amnesia</h4>
                             <p class="uppercase">Sativa THC-P</p>
@@ -1310,6 +1332,11 @@
                 <h2>Kunden</h2>
                 <!-- Testimonial Slider -->
                 <div class="slider-container">
+                    <!-- Slider Pfeile -->
+                    <div class="slider-arrows">
+                        <img src="mediafiles/svg/arrow.svg" alt="Pfeil Links" class="arrow">
+                        <img src="mediafiles/svg/arrow.svg" alt="Pfeil Rechts" class="arrow">
+                    </div>
                     <div class="slider">
                         <div class="slider-element">
                             <div class="testimonial">
@@ -1374,8 +1401,6 @@
                     </div>
                     <div class="dots">
                         <div class="dot active"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
                         <div class="dot"></div>
                         <div class="dot"></div>
                     </div>
