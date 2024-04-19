@@ -66,23 +66,53 @@ function toggleProdukt(e){
 ProduktButton_1.addEventListener('click', toggleProdukt);
 ProduktButton_2.addEventListener('click', toggleProdukt);
 
-// --------------------- Slider ---------------------
+// --------------------- Slider Funktionen ---------------------
 
 
 const Slider = document.querySelectorAll('.slider');
+const sliderContainer = document.querySelectorAll('.slider-container');
 
+// Slider Dots
 function changeSlide(e){
     const sliderLength = e.target.scrollWidth; // Länge des Sliders
     const sliderPosition = e.target.scrollLeft; // Scollposition des Sliders
     const sliderElementCount = e.target.children.length; // Anzahl der Elemente im Slider
     const x =  (sliderPosition / sliderLength) * sliderElementCount; // Berechnung des aktuellen Slides
 
+    const dots = e.target.nextElementSibling; // Dots Container
+    
+    const arrowLeft = e.target.previousElementSibling.children[0]; // Linker Pfeil
+    const arrowRight = e.target.previousElementSibling.children[1]; // Rechter Pfeil
+
     for (let i = 0; i < sliderElementCount; i++){
         if(i == x){
-            e.target.nextElementSibling.children[i].classList.add('active');
+            dots.children[i].classList.add('active');
         }else{
-            e.target.nextElementSibling.children[i].classList.remove('active');
+            dots.children[i].classList.remove('active');
         }
+    }
+    // Ausblenden des rechten Pfeils, wenn das Ende des Sliders erreicht ist
+    if(sliderPosition == sliderLength - e.target.clientWidth){
+        arrowRight.style.opacity = 0.3;
+        arrowRight.style.pointerEvents = 'none';
+    }
+
+    // Einblenden des rechten Pfeils, wenn der Slider nach links gescrollt wird
+    if(sliderPosition < sliderLength - e.target.clientWidth){
+        arrowRight.style.opacity = 1;
+        arrowRight.style.pointerEvents = 'auto';
+    }
+
+    // Ausblenden des linken Pfeils, wenn der Anfang des Sliders erreicht ist
+    if(sliderPosition == 0){
+        arrowLeft.style.opacity = 0.3;
+        arrowLeft.style.pointerEvents = 'none'; // Pfeil kann nicht mehr angeklickt werden
+    }
+
+    // Einblendung des linken Pfeils, wenn der Slider nach rechts gescrollt wird
+    if(sliderPosition > 0){
+        arrowLeft.style.opacity = 1;
+        arrowLeft.style.pointerEvents = 'auto';
     }
 }
 
@@ -92,32 +122,32 @@ for(let i = 0; i < Slider.length; i++){
 
 // Slider Arrows
 
-const sliderContainer = document.querySelectorAll('.slider-container');
+function slideLeft(e){ // e.target = Pfeil
+    const slider = e.target.parentElement.parentElement.children[1]; // Slider
+    const sliderWidth = slider.children[0].clientWidth; // Breite eines Elements im Slider
 
-function slideLeft(e){
-    const slider = e.target.parentElement.parentElement.children[1];
-    const sliderWidth = slider.children[0].clientWidth;
-
-    slider.scrollLeft -= sliderWidth;
+    slider.scrollLeft -= sliderWidth; // Scrollen um die Breite eines Elements
 }
 
-function slideRight(e){
-    const slider = e.target.parentElement.parentElement.children[1];
-    const sliderWidth = slider.children[0].clientWidth;
+function slideRight(e){ // e.target = Pfeil
+    const slider = e.target.parentElement.parentElement.children[1]; // Slider
+    const sliderWidth = slider.children[0].clientWidth; // Breite eines Elements im Slider
 
-    slider.scrollLeft += sliderWidth;
+    slider.scrollLeft += sliderWidth; // Scrollen um die Breite eines Elements
 }
 
 for(let i = 0; i < sliderContainer.length; i++){
     // Linker Pfeil
     sliderContainer[i].children[0].children[0].addEventListener('click', slideLeft);
-
-    if(sliderContainer[i].children[1].scrollLeft == 0){
-        sliderContainer[i].children[0].children[0].style.opacity = 0.3;
-    }
     
     // Rechter Pfeil
     sliderContainer[i].children[0].children[1].addEventListener('click', slideRight);
+
+    // Der linke Pfeil wird beim Laden der Seite ausgeblendet
+    if(sliderContainer[i].children[1].scrollLeft == 0){
+        sliderContainer[i].children[0].children[0].style.opacity = 0.3;
+        sliderContainer[i].children[0].children[0].style.pointerEvents = 'none'; // Pfeil kann nicht mehr angeklickt werden
+    }
 }
 
 

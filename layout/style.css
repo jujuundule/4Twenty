@@ -239,7 +239,6 @@ body * {
 }
 
 /* Header/ Navigation */
-
 header {
     position: fixed;
     width: 100vw;
@@ -254,14 +253,16 @@ header {
     display: flex;
     justify-content:space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 header .logo{
-    width: clamp(5rem, 25vw, 10rem);
+    width: clamp(3rem, 25vw, 8rem);
 }
 
 .burger{
     width: 40px;
+    min-width: 40px;
     aspect-ratio: 1/1;
     display: flex;
     flex-direction: column;
@@ -487,7 +488,7 @@ section{
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-15px);
     }
     100% {
         transform: translateY(0);
@@ -559,7 +560,7 @@ section{
     display: flex;
     flex-direction: row;
     overflow: scroll;
-    -webkit-overflow-scrolling: touch;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory; /*scroll-snap*/ 
     scroll-behavior: smooth;
 }
@@ -744,6 +745,58 @@ section{
     background-image: url('../mediafiles/mobile/product-images/core-line/4twenty_product-image_amnesia.webp');
 }
 
+/* Slider Hintergrundbilder*/
+
+#Produkte-LL .slider-element,
+#Produkte-CL .slider-element{
+    padding-top: 20vh;
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+/* Light Line */
+#Produkte-LL .slider-element:nth-child(1){
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_skittlez.webp');
+}
+
+#Produkte-LL .slider-element:nth-child(2){
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_limette+minze.webp');
+}
+
+#Produkte-LL .slider-element:nth-child(3){
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_exotische_fruechte+ananas.webp');
+}
+
+#Produkte-LL .slider-element:nth-child(4){
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_blackfruits+acai.webp');
+}
+
+#Produkte-LL .slider-element:nth-child(5){
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_bienenstich+vanille.webp');
+}
+
+/* Core Line */
+#Produkte-CL .slider-element:nth-child(1){
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_wedding_cake.webp');
+}
+
+#Produkte-CL .slider-element:nth-child(2){
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_obama_kush.webp');
+}
+
+#Produkte-CL .slider-element:nth-child(3){
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_lmn_runtz.webp');
+}
+
+#Produkte-CL .slider-element:nth-child(4){
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_ghost_train_haze.webp');
+}
+
+#Produkte-CL .slider-element:nth-child(5){
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_amnesia.webp');
+}
+
 /* Kunden */
 
 #Kunden .slider-element{
@@ -851,7 +904,7 @@ section{
 /*          6. Media Queries */
 /* =====================================*/
 
-/* Tablet */
+/* Tablet (hochkant) */
 @media screen and (min-width: 480px){
 
     /* Hintergrundbilder */
@@ -859,87 +912,148 @@ section{
         color: red;
     }
 
+    /* Hintergründe */
+
     .bg-divider-bottom{
-        background-image: url('../mediafiles/divider/cracked_asphalt_inverted_unten.svg'), url('../mediafiles/desktop/patterns/cracked_asphalt_seamless_pattern.webp');
+        background-image: url('../mediafiles/divider/cracked_asphalt_inverted_unten.svg'), url('../mediafiles/tablet/patterns/cracked_asphalt_seamless_pattern.webp');
     }
 
     .bg-divider-top{
-        background-image: url('../mediafiles/divider/cracked_asphalt_inverted_oben.svg'), url('../mediafiles/desktop/patterns/cracked_asphalt_seamless_pattern.webp');
+        background-image: url('../mediafiles/divider/cracked_asphalt_inverted_oben.svg'), url('../mediafiles/tablet/patterns/cracked_asphalt_seamless_pattern.webp');
     }
 
     .bg-divider-top-bottom{
-        background-image: url('../mediafiles/divider/cracked_asphalt_inverted_oben.svg'), url('../mediafiles/divider/cracked_asphalt_inverted_unten.svg'), url('../mediafiles/desktop/patterns/cracked_asphalt_seamless_pattern.webp');
+        background-image: url('../mediafiles/divider/cracked_asphalt_inverted_oben.svg'), url('../mediafiles/divider/cracked_asphalt_inverted_unten.svg'), url('../mediafiles/tablet/patterns/cracked_asphalt_seamless_pattern.webp');
     }
 
     /* Produktbilder */
 
     /* Vapes */
     .product-img.vape_1ml{
-        background-image: url('../mediafiles/desktop/product-images/vapes/4twenty_vape_1ml.webp');
+        background-image: url('../mediafiles/tablet/product-images/vapes/4twenty_vape_1ml.webp');
     }
     
     .product-img.vape_2ml{
-        background-image: url('../mediafiles/desktop/product-images/vapes/4twenty_vape_2ml.webp');
+        background-image: url('../mediafiles/tablet/product-images/vapes/4twenty_vape_2ml.webp');
     }
 
     /* Light Line */
     #Produkte-LL .slider-element:nth-child(1) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_zkittles.webp');
+        background-image: url('../mediafiles/tablet/product-images/light-line/4twenty_product-image_zkittles.webp');
     }
 
     #Produkte-LL .slider-element:nth-child(2) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_limette_+_minze.webp');
+        background-image: url('../mediafiles/tablet/product-images/light-line/4twenty_product-image_limette_+_minze.webp');
     }
 
     #Produkte-LL .slider-element:nth-child(3) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_exotische_fruechte_+_ananas.webp');
+        background-image: url('../mediafiles/tablet/product-images/light-line/4twenty_product-image_exotische_fruechte_+_ananas.webp');
     }
 
     #Produkte-LL .slider-element:nth-child(4) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_black_fruits_+_acai.webp');
+        background-image: url('../mediafiles/tablet/product-images/light-line/4twenty_product-image_black_fruits_+_acai.webp');
     }
 
     #Produkte-LL .slider-element:nth-child(5) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_bienenstich_+_vanille.webp');
+        background-image: url('../mediafiles/tablet/product-images/light-line/4twenty_product-image_bienenstich_+_vanille.webp');
     }
 
     /* Core Line */
     #Produkte-CL .slider-element:nth-child(1) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_wedding-cake.webp');
+        background-image: url('../mediafiles/tablet/product-images/core-line/4twenty_product-image_wedding-cake.webp');
     }
 
     #Produkte-CL .slider-element:nth-child(2) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_obama-kush.webp');
+        background-image: url('../mediafiles/tablet/product-images/core-line/4twenty_product-image_obama-kush.webp');
     }
 
     #Produkte-CL .slider-element:nth-child(3) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_lmn-runtz.webp');
+        background-image: url('../mediafiles/tablet/product-images/core-line/4twenty_product-image_lmn-runtz.webp');
     }
 
     #Produkte-CL .slider-element:nth-child(4) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_ghost-train-haze.webp');
+        background-image: url('../mediafiles/tablet/product-images/core-line/4twenty_product-image_ghost-train-haze.webp');
     }
 
     #Produkte-CL .slider-element:nth-child(5) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_amnesia.webp');
+        background-image: url('../mediafiles/tablet/product-images/core-line/4twenty_product-image_amnesia.webp');
     }
 }
 
-/* Desktop/ Tablet Landscape */
-
+/* Desktop/ Tablet (Landscape) */
 @media screen and (min-width: 1024px) and (orientation: landscape){
+    
+    :root{
+            /* Typography */
+    font-size: 16px; /* 1rem = 16px */
+
+    --font-family_01: 'Viper Nora';
+    --font-family_02: 'Avenir Next';
+
+    --font-weight-bold: 700;
+    --font-weight-medium: 500;
+    --font-weight-thin: 100;
+
+    --font-size-p-mobile: 1rem;
+    --font-size-b-mobile: 1.3rem;
+    --font-size-h2-mobile: clamp(2rem, 15vw, 4rem);
+    --font-size-h3-mobile: clamp(1rem, 10vw, 1.8rem);
+    --font-size-h4-mobile: clamp(.8rem, 10vw, 1.5rem);
+    --font-size-nav-mobile: 2rem;
+
+    --line-height-mobile: calc(var(--font-size-p-mobile) * 1.8);
+
+    /* Spacing */
+    --padding-side-mobile: 30px;
+    --gap-mobile: 60px;
+    --max-width: 1920px;
+
+    /* Border Radius */
+    --border-radius-01: 5px;
+    --border-radius-02: 500px;
+    }
+
+    html {
+        height: 100vh;
+        max-width: 2500px;
+    }
+    
     body *{
         color: green;
     }
+
+    main{
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        max-height: 100vh;
+    }
+
+    main > * {
+        min-width: 100vw;
+        height: 100%;
+        
+    }
+
+    /* Hintergründe */
+
+    .bg-fullscreen{
+        background-image: url('../mediafiles/desktop/background-images/cracked_asphalt_fullscreen.webp');
+        background-size: 100vw 100vh;
+        background-position: top;
+    }
+
+    .bg-divider-left-right{
+        background-image: url('../mediafiles/desktop/background-images/cracked_asphalt_left-right.webp');
+        background-position: top;
+        background-size: 100vw 100vh;
+        background-repeat: no-repeat;
+    }
+
+    .bg-divider-top-bottom{
+        background-image: url('../mediafiles/tablet/patterns/cracked_asphalt_seamless_pattern.webp');
+        background-size: cover;
+        back
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
