@@ -1127,6 +1127,7 @@ footer{
 
     header {
         backdrop-filter: none;
+        -webkit-backdrop-filter: none;
         transition: background-color .8s ease-out;
     }
 
@@ -1153,7 +1154,7 @@ footer{
 
     #slogan{
         width: 75vw;
-        max-width: 500px;
+        max-width: 400px;
     }
 
     /* Wirkstoff */
