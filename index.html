@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Version 1.14 -->
+<!-- Version 1.15 -->
 
 <html lang="de">
   <head>
@@ -477,7 +477,7 @@
                 <li><a href="https://ags-space.de/" target="_blank">Shop</a></li>
                 <li><a href="https://www.instagram.com/4twentyvape/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
             </ul>
-            <p class="copyright">©2024 4Twenty</p>
+            <div class="copyright">©2024 4Twenty</div>
         </nav>
     </header>
     <main>
@@ -933,27 +933,27 @@
                 <div class="flex-container comparison">
                     <div class="flex-row">
                         <div>
-                            15%<br>THC-P
+                            15%<wbr> THC-P
                         </div>
                         <div>
                             =
                         </div>
                         <div>
-                            45%<br>THC-P
+                            45%<wbr> THC-P
                         </div>
                         <div>
                             =
                         </div>
                         <div>
-                            120%<br>THC-P
+                            120%<wbr> THC-P
                         </div>
                     </div>
                     <div class="flex-row">
-                        <div>30%<br>THC-P</div>
+                        <div>30%<wbr> THC-P</div>
                         <div>=</div>
-                        <div>90%<br>THC-P</div>
+                        <div>90%<wbr> THC-P</div>
                         <div>=</div>
-                        <div>240%<br>THC-P</div>
+                        <div>240%<wbr> THC-P</div>
                     </div>
                 </div>
                 <!-- Grafik -->
@@ -986,52 +986,110 @@
                 </div>
             </section>
         </div>
-        <div class="bg-divider-top-bottom bg-fullscreen">
+        <div class="bg-divider-top-bottom bg-fullscreen bg-double-fullscreen">
             <section id="Produkte">
                 <h2>Produkte</h2>
-                <!-- Button -->
+                <!-- Buttons -->
                 <div class="button-container">
                     <button class="active" id="product-btn-1">1 ml</button>
                     <button id="product-btn-2">2 ml</button>
                 </div>
-                <h3>Technische Daten</h3>
-                <!-- 1 ml technische Daten -->
-                <div id="TD_1ml" class="flex-container">
-                    <div>
-                        1,4 Ω<br><b>Keramik Coil</b>
+                <div class="container-mobile">
+                    <h3>Technische Daten</h3>
+                    <!-- 1 ml technische Daten -->
+                    <div id="TD_1ml" class="flex-container">
+                        <div>
+                            1,4 Ω<br><b>Keramik Coil</b>
+                        </div>
+                        <div>
+                            320 mAh<br><b>Batterie</b>
+                        </div>
+                        <div>
+                            1 ml<br><b>Liquid</b>
+                        </div>
+                        <div>
+                            400<br><b>Züge</b>
+                        </div>
+                        <div>
+                            USB-C<br><b>Anschluss</b>
+                        </div>
+                        <div class="product-img vape_1ml"></div>
                     </div>
-                    <div>
-                        320 mAh<br><b>Batterie</b>
+                    <!-- 2 ml technische Daten -->
+                    <div id="TD_2ml" class="flex-container hidden">
+                        <div>
+                            1,4 Ω<br><b>Keramik Coil</b>
+                        </div>
+                        <div>
+                            320 mAh<br><b>Batterie</b>
+                        </div>
+                        <div>
+                            2 ml<br><b>Liquid</b>
+                        </div>
+                        <div>
+                            800<br><b>Züge</b>
+                        </div>
+                        <div>
+                            USB-C<br><b>Anschluss</b>
+                        </div>
+                        <div class="product-img vape_2ml"></div>
                     </div>
-                    <div>
-                        1 ml<br><b>Liquid</b>
-                    </div>
-                    <div>
-                        400<br><b>Züge</b>
-                    </div>
-                    <div>
-                        USB-C<br><b>Anschluss</b>
-                    </div>
-                    <div class="product-img vape_1ml"></div>
                 </div>
-                <!-- 2 ml technische Daten -->
-                <div id="TD_2ml" class="flex-container hidden">
-                    <div>
-                        1,4 Ω<br><b>Keramik Coil</b>
+                <div class="container-desktop flex-container-column">
+                    <div class="flex-container-row">
+                        <h3>1 ml</h3>
+                        <h3>Technische Daten</h3>
+                        <h3>2 ml</h3>
                     </div>
-                    <div>
-                        320 mAh<br><b>Batterie</b>
+                    <div class="flex-container-row">
+                        <!-- Bild 1ml-->
+                        <div>
+                            <img src="mediafiles/mobile/product-images/vapes/4twenty_vape_1ml.webp" alt="4Twenty Vape 1ml">
+                        </div>
+                        <!-- Technische Daten 1ml und 2ml-->
+                        <div class="table">
+                            <div class="table-row">
+                                <!-- 1 ml -->
+                                <div>1,4 Ω</div>
+                                <div><b>Keramik Coil</b></div>
+                                <!-- 2 ml -->
+                                <div>1,4 Ω</div>
+                            </div>
+                            <div class="table-row">
+                                <!-- 1 ml -->
+                                <div>320 mAh</div>
+                                <div><b>Batterie</b></div>
+                                <!-- 2 ml -->
+                                <div>320 mA</div>
+                            </div>
+                            <div class="table-row">
+                                <!-- 1 ml -->
+                                <div>1 ml</div>
+                                <div><b>Liquid</b></div>
+                                <!-- 2 ml -->
+                                <div>2 ml</div>
+                            </div>
+                            <div class="table-row">
+                                <!-- 1 ml -->
+                                <div>400</div>
+                                <div><b>Züge</b></div>
+                                <!-- 2 ml -->
+                                <div>800</div>
+                            </div>
+                            <div class="table-row">
+                                <!-- 1 ml -->
+                                <div>USB-C</div>
+                                <div><b>Anschluss</b></div>
+                                <!-- 2 ml -->
+                                <div>USB-C</div>
+                            </div>
+                        </div>
+                        <!-- Bild 2ml-->
+                        <div>
+                            <img src="mediafiles/mobile/product-images/vapes/4twenty_vape_2ml.webp" alt="4Twenty Vape 2ml">
+                        </div>
+
                     </div>
-                    <div>
-                        2 ml<br><b>Liquid</b>
-                    </div>
-                    <div>
-                        800<br><b>Züge</b>
-                    </div>
-                    <div>
-                        USB-C<br><b>Anschluss</b>
-                    </div>
-                    <div class="product-img vape_2ml"></div>
                 </div>
             </section>
             <section id="Sorten-LL" class="flavors-overview">
@@ -1121,65 +1179,67 @@
                 </div>
             </section>
         </div>
-        <section id="Produkte-LL" class="product-slider bg-divider-left-right">
-            <!-- Produkt Slider -->
-            <div class="slider-container">
-                <!-- Slider Pfeile -->
-                <div class="slider-arrows">
-                    <img src="mediafiles/svg/arrow.svg" alt="Pfeil Links" class="arrow">
-                    <img src="mediafiles/svg/arrow.svg" alt="Pfeil Rechts" class="arrow">
+        <div class ="bg-divider-left-right">
+            <section id="Produkte-LL" class="product-slider">
+                <!-- Produkt Slider -->
+                <div class="slider-container">
+                    <!-- Slider Pfeile -->
+                    <div class="slider-arrows">
+                        <img src="mediafiles/svg/arrow.svg" alt="Pfeil Links" class="arrow">
+                        <img src="mediafiles/svg/arrow.svg" alt="Pfeil Rechts" class="arrow">
+                    </div>
+                    <div class="slider">
+                        <div class="slider-element">
+                            <div class="product-img"></div>
+                            <div>
+                                <h4>Zkittles</h4>
+                                <p class="uppercase">Hybrid THC-P</p>
+                            </div>
+                            <a href="#" class="btn-01">Shop Now</a>
+                        </div>
+                        <div class="slider-element">
+                            <div class="product-img"></div>
+                            <div>
+                                <h4>Limette + Minze</h4>
+                                <p class="uppercase">Sativa THC-P</p>
+                            </div>
+                            <a href="#" class="btn-01">Shop Now</a>
+                        </div>
+                        <div class="slider-element">
+                            <div class="product-img"></div>
+                            <div>
+                                <h4>Exotische Früchte + Ananas</h4>
+                                <p class="uppercase">Indica THC-P</p>
+                            </div>
+                            <a href="#" class="btn-01">Shop Now</a>
+                        </div>
+                        <div class="slider-element">
+                            <div class="product-img"></div>
+                            <div>
+                                <h4>Blackfruits + Açai</h4>
+                                <p class="uppercase">Sativa THC-P</p>
+                            </div>
+                            <a href="#" class="btn-01">Shop Now</a>
+                        </div>
+                        <div class="slider-element">
+                            <div class="product-img"></div>
+                            <div>
+                                <h4>Bienenstich + Vanille</h4>
+                                <p class="uppercase">Indica THC-P</p>
+                            </div>
+                            <a href="#" class="btn-01">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
                 </div>
-                <div class="slider">
-                    <div class="slider-element">
-                        <div class="product-img"></div>
-                        <div>
-                            <h4>Zkittles</h4>
-                            <p class="uppercase">Hybrid THC-P</p>
-                        </div>
-                        <a href="#" class="btn-01">Shop Now</a>
-                    </div>
-                    <div class="slider-element">
-                        <div class="product-img"></div>
-                        <div>
-                            <h4>Limette + Minze</h4>
-                            <p class="uppercase">Sativa THC-P</p>
-                        </div>
-                        <a href="#" class="btn-01">Shop Now</a>
-                    </div>
-                    <div class="slider-element">
-                        <div class="product-img"></div>
-                        <div>
-                            <h4>Exotische Früchte + Ananas</h4>
-                            <p class="uppercase">Indica THC-P</p>
-                        </div>
-                        <a href="#" class="btn-01">Shop Now</a>
-                    </div>
-                    <div class="slider-element">
-                        <div class="product-img"></div>
-                        <div>
-                            <h4>Blackfruits + Açai</h4>
-                            <p class="uppercase">Sativa THC-P</p>
-                        </div>
-                        <a href="#" class="btn-01">Shop Now</a>
-                    </div>
-                    <div class="slider-element">
-                        <div class="product-img"></div>
-                        <div>
-                            <h4>Bienenstich + Vanille</h4>
-                            <p class="uppercase">Indica THC-P</p>
-                        </div>
-                        <a href="#" class="btn-01">Shop Now</a>
-                    </div>
-                </div>
-                <div class="dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
         <div class="bg-divider-top-bottom bg-fullscreen">
             <section id="Sorten-CL" class="flavors-overview">
                 <h2>Core Line</h2>
@@ -1268,65 +1328,67 @@
                 </div>
             </section>
         </div>
-        <section id="Produkte-CL" class="product-slider bg-divider-left-right">
-            <!-- Produkt Slider -->
-            <div class="slider-container">
-                <!-- Slider Pfeile -->
-                <div class="slider-arrows">
-                    <img src="mediafiles/svg/arrow.svg" alt="Pfeil Links" class="arrow">
-                    <img src="mediafiles/svg/arrow.svg" alt="Pfeil Rechts" class="arrow">
+        <div class ="bg-divider-left-right">
+            <section id="Produkte-CL" class="product-slider bg-divider-left-right">
+                <!-- Produkt Slider -->
+                <div class="slider-container">
+                    <!-- Slider Pfeile -->
+                    <div class="slider-arrows">
+                        <img src="mediafiles/svg/arrow.svg" alt="Pfeil Links" class="arrow">
+                        <img src="mediafiles/svg/arrow.svg" alt="Pfeil Rechts" class="arrow">
+                    </div>
+                    <div class="slider">
+                        <div class="slider-element">
+                            <div class="product-img"></div>
+                            <div>
+                                <h4>Wedding Cake</h4>
+                                <p class="uppercase">Indica THC-P</p>
+                            </div>
+                            <a href="#" class="btn-01">Shop Now</a>
+                        </div>
+                        <div class="slider-element">
+                            <div class="product-img"></div>
+                            <div>
+                                <h4>Obama Kush</h4>
+                                <p class="uppercase">Indica THC-P</p>
+                            </div>
+                            <a href="#" class="btn-01">Shop Now</a>
+                        </div>
+                        <div class="slider-element">
+                            <div class="product-img"></div>
+                            <div>
+                                <h4>Lmn Runtz</h4>
+                                <p class="uppercase">Sativa THC-P</p>
+                            </div>
+                            <a href="#" class="btn-01">Shop Now</a>
+                        </div>
+                        <div class="slider-element">
+                            <div class="product-img"></div>
+                            <div>
+                                <h4>Ghost Train Haze</h4>
+                                <p class="uppercase">Hybrid THC-P</p>
+                            </div>
+                            <a href="#" class="btn-01">Shop Now</a>
+                        </div>
+                        <div class="slider-element">
+                            <div class="product-img"></div>
+                            <div>
+                                <h4>Amnesia</h4>
+                                <p class="uppercase">Sativa THC-P</p>
+                            </div>
+                            <a href="#" class="btn-01">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
                 </div>
-                <div class="slider">
-                    <div class="slider-element">
-                        <div class="product-img"></div>
-                        <div>
-                            <h4>Wedding Cake</h4>
-                            <p class="uppercase">Indica THC-P</p>
-                        </div>
-                        <a href="#" class="btn-01">Shop Now</a>
-                    </div>
-                    <div class="slider-element">
-                        <div class="product-img"></div>
-                        <div>
-                            <h4>Obama Kush</h4>
-                            <p class="uppercase">Indica THC-P</p>
-                        </div>
-                        <a href="#" class="btn-01">Shop Now</a>
-                    </div>
-                    <div class="slider-element">
-                        <div class="product-img"></div>
-                        <div>
-                            <h4>Lmn Runtz</h4>
-                            <p class="uppercase">Sativa THC-P</p>
-                        </div>
-                        <a href="#" class="btn-01">Shop Now</a>
-                    </div>
-                    <div class="slider-element">
-                        <div class="product-img"></div>
-                        <div>
-                            <h4>Ghost Train Haze</h4>
-                            <p class="uppercase">Hybrid THC-P</p>
-                        </div>
-                        <a href="#" class="btn-01">Shop Now</a>
-                    </div>
-                    <div class="slider-element">
-                        <div class="product-img"></div>
-                        <div>
-                            <h4>Amnesia</h4>
-                            <p class="uppercase">Sativa THC-P</p>
-                        </div>
-                        <a href="#" class="btn-01">Shop Now</a>
-                    </div>
-                </div>
-                <div class="dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
         <div class="bg-divider-top bg-fullscreen">
             <section id="Kunden">
                 <h2>Kunden</h2>
@@ -1408,6 +1470,13 @@
             </section>
         </div>
     </main>
+    <footer>
+        <div class="copyright">©2024 4Twenty</div>
+        <div class="scrollbar-track">
+            <div class="scrollbar-handle"></div>
+        </div>
+        <i class="fa-brands fa-instagram"></i>
+    </footer>
     <!-- Funktionen -->
     <script src="js/app.js"></script>
     <!-- Font Awesome Icons-->
