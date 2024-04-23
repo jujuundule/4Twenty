@@ -76,8 +76,8 @@
     --font-size-h4-mobile: clamp(.8rem, 10vw, 1.5rem);
     --font-size-nav-mobile: 2rem;
 
-    --font-size-h2-desktop: clamp(5rem, 15vw, 10rem);
-    --font-size-h3-desktop: clamp(1.8rem, 10vw, 2.5rem);
+    --font-size-h2-desktop: clamp(5rem, 15vw, 8rem);
+    --font-size-h3-desktop: clamp(1.8rem, 10vw, 2rem);
     --font-size-nav-desktop: 3rem;
 
     --line-height-mobile: calc(var(--font-size-p-mobile) * 1.8);
@@ -102,6 +102,7 @@
 body *{
     color: var(--color-03);
     font-family: var(--font-family_02), sans-serif;
+    -webkit-hyphens: auto; /* Safari */
     hyphens:auto;
 }
 
@@ -115,6 +116,8 @@ h2 {
     font-size: var(--font-size-h2-mobile); 
     text-align: center;
     margin-bottom: 1rem;
+    -webkit-hyphens: manual;
+    hyphens:manual;
 }
 
 h3 {
@@ -464,8 +467,8 @@ section{
     border: 1px solid var(--color-03);
     color: var(--color-03);
     padding: .5rem;
-    hyphens: auto;
-    white-space: nowrap; 
+    hyphens: manual;
+
 }
 
 .comparison .flex-row:nth-child(odd) div:nth-child(odd){
@@ -481,7 +484,7 @@ section{
     background-position: center;
     padding: 5vh 0;
     width: 100%;
-    max-width: 1000px;
+    max-width: 750px;
     aspect-ratio: 16/9;
     display: grid;
     place-items: center;
@@ -570,6 +573,7 @@ section{
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 4rem;
 }
 
@@ -775,7 +779,7 @@ section{
 
 /* Light Line */
 #Produkte-LL .slider-element:nth-child(1){
-    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_skittlez.webp');
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_zkittles.webp');
 }
 
 #Produkte-LL .slider-element:nth-child(2){
@@ -962,12 +966,7 @@ footer{
 
 /* Tablet (hochkant) */
 @media screen and (min-width: 480px){
-
-    /* Hintergrundbilder */
-    body *{
-        color: red;
-    }
-
+    
     /* Hintergründe */
 
     .bg-divider-bottom{
@@ -1055,40 +1054,41 @@ footer{
         font-size: var(--font-size-nav-desktop);
     }
 
+    .intensity-display {
+        line-height: 2.5rem;
+    }
+
     .intensity-display b{
         font-size: calc(var(--font-size-b-mobile) * 4);
     }
 
-    /* General */
-    html {
-        height: 100vh;
-        max-width: 2500px;
-        position: relative;
-    }
-    
-    body *{
-        color: white; /*TODO: remove*/
-    }
+    /* General */  
 
+    /* Container */
     main{
         display: flex;
         flex-direction: row;
         overflow-x: scroll;
         overflow-y: hidden;
-        max-height: 100vh;
+        scroll-behavior: smooth;
+        scroll-snap-type: x proximity;
     }
 
-    main > * {
+    /* Item */
+    .section-bg{
         min-width: 100vw;
-        height: 100vh;   
+        scroll-snap-align: start;
     }
 
     section{
         height: 100vh;
+        width: 100vw;
         max-width: var(--max-width-desktop);
+        margin: 0 auto;
         gap: 0;
         padding: 10vh var(--padding-side-desktop);
         align-items: center;
+        gap: 10%;
     }
 
     /* Hintergründe */
@@ -1112,6 +1112,12 @@ footer{
     .bg-divider-top-bottom.bg-fullscreen.bg-double-fullscreen{
         display: flex;
         min-width: 200vw;
+        gap: 0px;
+    }
+
+    .bg-divider-top-bottom.bg-fullscreen.bg-double-fullscreen section{
+        margin: 0;
+        min-width: 100vw;
     }
 
     .bg-double-fullscreen section{
@@ -1126,6 +1132,9 @@ footer{
     /* Header/ Navigation */
 
     header {
+        top: 0;
+        left: 0;
+        width: 100vw;
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
         transition: background-color .8s ease-out;
@@ -1136,10 +1145,10 @@ footer{
     }
 
     .navbar {
-        padding: var(--padding-side-mobile);
-        max-width: 80vw;
-        padding: 0;
+        width: 80vw;
+        max-width: var(--max-width-desktop);
         margin: 0 auto;
+        padding: 0;
     }
 
     .main-nav ul{
@@ -1147,6 +1156,10 @@ footer{
     }
 
     .main-nav .copyright{
+        display: none;
+    }
+
+    .main-nav a.instagram-link{
         display: none;
     }
 
@@ -1160,7 +1173,7 @@ footer{
     /* Wirkstoff */
 
     #Wirkstoff p{
-        max-width: 800px;
+        max-width: 25vw;
     }
 
     /* Produkte */
@@ -1204,6 +1217,56 @@ footer{
         padding: 0 2rem ;
     }
 
+    /* Slider Hintergrundbilder */
+
+    #Produkte-LL .slider-element,
+    #Produkte-CL .slider-element{
+        padding-top: 15vh;
+        z-index: -1;
+    }
+
+    /* Light Line */
+    #Produkte-LL .slider-element:nth-child(1){
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_zkittles.webp');
+    }
+
+    #Produkte-LL .slider-element:nth-child(2){
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_limette+minze.webp');
+    }
+
+    #Produkte-LL .slider-element:nth-child(3){
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_exotische_fruechte+ananas.webp');
+    }
+
+    #Produkte-LL .slider-element:nth-child(4){
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_blackfruits+acai.webp');
+    }
+
+    #Produkte-LL .slider-element:nth-child(5){
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_bienenstich+vanille.webp');
+    }
+
+    /* Core Line */
+    #Produkte-CL .slider-element:nth-child(1){
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_wedding_cake.webp');
+    }
+
+    #Produkte-CL .slider-element:nth-child(2){
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_obama_kush.webp');
+    }
+
+    #Produkte-CL .slider-element:nth-child(3){
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_lmn_runtz.webp');
+    }
+
+    #Produkte-CL .slider-element:nth-child(4){
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_ghost_train_haze.webp');
+    }
+
+    #Produkte-CL .slider-element:nth-child(5){
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_amnesia.webp');
+    }
+
     /* Geschmackssorten Übersicht */
 
     .intensity-display{
@@ -1216,11 +1279,31 @@ footer{
     .flavors-overview .slider-element{
         min-width: 20%;
         padding: 0 2rem;
+        transition: all .5s ease;
+    }
+
+    .flavors-overview .slider{
+        overflow: visible;
     }
 
     .flavors-overview .dots,
     .flavors-overview .slider-arrows{
         display: none;
+    }
+
+    /* Hover Effekte */
+    .flavors-overview .slider-element:hover{
+        transform: translate(0, +5%) scale(1.1);
+    }
+
+    .flavors-overview .slider-element .circle img{
+        transition: all .5s ease;
+    }
+
+    .flavors-overview .slider-element:hover .circle img{ 
+        top: +10%;
+        left: 0;
+        transform: rotate(5deg);
     }
 
     /* Produkt-Slider */
@@ -1230,6 +1313,10 @@ footer{
 
     .product-slider .product-img{
         max-width: 600px;
+    }
+
+    .slider-container .slider-arrows{
+        max-width: 800px;
     }
 
     /* Kunden */
@@ -1250,13 +1337,18 @@ footer{
         bottom: 0;
         left: 0;
         width: 100vw;
-        max-width: var(--max-width-desktop);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 5vh var(--padding-side-desktop);
+        display: block;
         font-size: 1rem;
+        z-index: 999;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 2%, rgba(0,0,0,0) 100%);
+    }
+
+    footer .flex-container-row{
+        width: 80vw;
+        max-width: var(--max-width-desktop);
+        align-items: center;
         gap: 10%;
+        margin: 5vh auto;
     }
 
     footer i {
@@ -1266,22 +1358,19 @@ footer{
     footer .scrollbar-track{
         position: relative;
         flex-grow: 4;
-        background-color: var(--color-04);
-        height: 8px;
+        background-color: rgba(255, 255, 255, 0.2);
+        height: 5px;
         flex-grow: 4;
         border-radius: 100000000px;
+        overflow: hidden;
+        filter: drop-shadow(var(--shadow-01));
     }
 
     footer .scrollbar-handle{
-        background-color: var(--color-03);
+        background-color: rgba(255, 255, 255, 0.8);
         height: 100%;
-        width: 10%;
         position: absolute;
-        left: 10%;
         bottom: 0;
         border-radius: 100000000px;
-        transform: translateX(-100%);
     }
-
-
 }

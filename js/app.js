@@ -8,22 +8,32 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 1000); // Adjust the delay time as needed
 });
 
-// ---------------------Slogan Rotate on Scroll ---------------------
+// --------------------- Slogan Rotation beim Scrollen ---------------------
 
-// Select the SVG element
+// Verweis auf das Slogan-Element
 const slogan = document.getElementById('slogan-outer');
+const Main = document.querySelector('main');
 
-// Function to handle scroll event
-function handleScroll() {
-    // Calculate the rotation angle based on the scroll position
-    let rotationAngle = window.scrollY * 0.15 % 360; // Adjust the multiplier to control the rotation speed
+// Funktion zum Drehen des Slogans beim vertikalen Scrollen
+function handleScrollVertical() {
+    // Berechne den Rotationswinkel basierend auf der Scrollposition
+    let rotationAngle = window.scrollY * 0.15 % 360; // Passen Sie den Wert 0.15 an, um die Drehgeschwindigkeit zu ändern
   
-    // Apply the rotation to the SVG element
+    // Setze den Rotationswinkel des Slogans
     slogan.style.transform = `rotate(${rotationAngle}deg)`;
   }
 
+function handleScrollHorizontal() {
+    // Berechne den Rotationswinkel basierend auf der Scrollposition
+    let rotationAngle = Main.scrollLeft * 0.15 %360; // Passen Sie den Wert 0.15 an, um die Drehgeschwindigkeit zu ändern
+  
+    // Setze den Rotationswinkel des Slogans
+    slogan.style.transform = `rotate(${rotationAngle}deg)`;
+}
+
 // Add scroll event listener
-window.addEventListener('scroll', handleScroll);
+window.addEventListener('scroll', handleScrollVertical);
+Main.addEventListener('scroll', handleScrollHorizontal);
 
 // --------------------- Navigation ---------------------
 
@@ -46,7 +56,7 @@ function toggleNav() {
 
 MainNavButton.addEventListener('click', toggleNav);
 
-// --------------------- Produkte ---------------------
+// --------------------- Produkte Button ---------------------
 
 const ProduktButton_1 = document.getElementById('product-btn-1');
 const ProduktButton_2 = document.getElementById('product-btn-2');
@@ -151,6 +161,64 @@ for(let i = 0; i < sliderContainer.length; i++){
         sliderContainer[i].children[0].children[0].style.pointerEvents = 'none'; // Pfeil kann nicht mehr angeklickt werden
     }
 }
+
+// --------------------- Horizontales Scrollen ---------------------
+
+function horizontalScroll(e) {
+    var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+    var scrollSpeed = 800; // Scrollgeschwindigkeit
+    var container = document.querySelector('main');
+    container.scrollLeft -= delta * scrollSpeed;
+    e.preventDefault();
+}
+
+function checkMediaQuery(MediaDesktop) {
+    var container = document.querySelector('main'); // Container für das horizontale Scrollen
+    if (MediaDesktop.matches) {
+        container.addEventListener('wheel', horizontalScroll);
+    } else {
+        container.removeEventListener('wheel', horizontalScroll);
+    }
+}
+
+var MediaDesktop = window.matchMedia("(min-width: 1024px)"); // Media Query für Desktop
+
+checkMediaQuery(MediaDesktop);
+
+MediaDesktop.addEventListener('change', function(e) {
+    checkMediaQuery(e.currentTarget);
+});
+
+// --------------------- Custom Slider ---------------------
+
+// Verweise auf die Schieberegler-Elemente
+const sliderTrack = document.getElementById('custom-slider');
+const sliderHandle = sliderTrack.children[0];
+
+// Berechnung der Dimensionen
+const itemWidth = document.querySelector('section').clientWidth;
+const containerWidth = document.querySelector('main').scrollWidth;
+
+// Setze die Breite des Schieberegler-Griffs
+sliderHandle.style.width = (itemWidth / containerWidth * 100) + 1 + '%';
+
+// Funktion zum Aktualisieren der Position des Schieberegler-Griffs
+function updateSliderHandlePosition() {
+    const scrollPosition = document.querySelector('main').scrollLeft;
+    const scrollPercentage = Math.round(scrollPosition / containerWidth * 100);
+    
+    sliderHandle.style.left = scrollPercentage + '%';
+}
+
+// Ereignislistener für das Scroll-Ereignis hinzufügen
+document.querySelector('main').addEventListener('scroll', updateSliderHandlePosition);
+
+// Initialisiere die Position des Schieberegler-Griffs
+updateSliderHandlePosition();
+
+
+
+
 
 
 
