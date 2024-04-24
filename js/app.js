@@ -166,7 +166,7 @@ for(let i = 0; i < sliderContainer.length; i++){
 
 function horizontalScroll(e) {
     var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-    var scrollSpeed = 800; // Scrollgeschwindigkeit
+    var scrollSpeed = 600; // Scrollgeschwindigkeit
     var container = document.querySelector('main');
     container.scrollLeft -= delta * scrollSpeed;
     e.preventDefault();
