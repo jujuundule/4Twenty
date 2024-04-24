@@ -800,7 +800,7 @@ section{
 }
 
 .product-slider .product-img{
-    aspect-ratio: 5/4;
+    aspect-ratio: 1/1;
     margin: 0;
     width: 75%;
     background-size: contain;
