@@ -83,14 +83,14 @@
     --font-size-h4-mobile: clamp(.8rem, 10vw, 1.5rem);
     --font-size-nav-mobile: 2rem;
 
-    --font-size-p-desktop: clamp(1vh, 3vw, 1.3vh);
+    --font-size-p-desktop: clamp(1vh, 3vw, 1.7vh);
     --font-size-b-desktop: clamp(1vh, 1vw, 2vh);
     --font-size-h2-desktop: clamp(6vh, 15vw, 10vh);
     --font-size-h3-desktop: clamp(3vh, 10vw, 3vh);
     --font-size-h4-desktop: clamp(1vh, 2vw, 2vh);
     --font-size-nav-desktop: clamp(1vh, 3vw, 8vh);
 
-    --line-height-mobile: calc(var(--font-size-p-mobile) * 1.8);
+    --line-height-mobile: calc(var(--font-size-p-mobile) * 1.5);
     --line-height-desktop: calc(var(--font-size-p-desktop) * 1.5);
 
     /* Spacing */
@@ -329,7 +329,12 @@ header .logo{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 2vh;
+}
+
+.instagram-logo{
+    width: 25px;
+    max-width: 8vh;
 }
 
 /* Sections General */
@@ -726,6 +731,7 @@ section{
 
 #Sorten-LL .slider-element:nth-child(3) .circle{
     background-color: var(--color-LL_03);
+    transform: scaleX(-1)
 }
 
 #Sorten-LL .slider-element:nth-child(4) .circle{
@@ -1000,9 +1006,16 @@ section{
 
 #Kunden .rating{
     display: flex;
-    gap: 5px;
+    gap: 5%;
     justify-content: center;
     color: var(--color-IL_04);
+}
+
+#Kunden .rating .star{
+    position: static;
+    width: 5vw;
+    max-width: 3vh;
+    transform: none;
 }
 
 #Kunden .slider-element{
@@ -1050,24 +1063,26 @@ footer{
 }
 
 .btn-01 {
+    font-size: var(--font-size-p-mobile);
     display: block;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: var(--font-weight-bold);
-    padding: 1rem 5vw;
+    padding: 2vh 5vw;
     border: 1px solid var(--color-03);
 }
 
 .btn-02{
+    font-size: var(--font-size-p-mobile);
     display: block;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: var(--font-weight-bold);
-    padding: 1rem 2vw;
+    padding: 2vh 5vw;
     border: 1px solid var(--color-03);
     width: max-content;
     margin: 0 auto;
-    margin-top: 1vh;
+    margin-top: 2vh;
 }
 
 /* =====================================*/
@@ -1332,7 +1347,7 @@ footer{
     }
 
     .main-nav ul{
-        gap: 3rem;
+        gap: 3vh;
     }
 
     .main-nav .copyright{
@@ -1387,12 +1402,12 @@ footer{
     }
 
     .effect-visualization img{
-        height: 10vh;
+        height: 6vh;
     }
 
     .effect-visualization{
         padding: 5vh 0;
-        height: 25vh;
+        height: 20vh;
         max-width: 55vh;
         aspect-ratio: 16/9;
     }
@@ -1504,19 +1519,19 @@ footer{
 
 
     /* Hover Effekte */
-    .flavors-overview .slider-element:hover{
-        transform: translate(0, +5%) scale(1.1);
-    }
-
     .flavors-overview .slider-element .circle img{
         transition: all .5s ease;
+    }
+
+    .flavors-overview .slider-element:hover .circle{
+        transform: translate(0, +5%) scale(1.1);
     }
 
     .flavors-overview .slider-element:hover .circle img{ 
         top: +10%;
         left: 0;
         transform: rotate(5deg);
-    }
+    }    
 
     /* Produkt-Slider */
     .product-slider .slider-element{
@@ -1561,7 +1576,11 @@ footer{
     }
 
     .btn-01 {
-        padding: 2vh 5vh;
+        font-size: var(--font-size-p-desktop);
+    }
+
+    .btn-02 {
+        font-size: var(--font-size-p-desktop);
     }
 
     .dots{

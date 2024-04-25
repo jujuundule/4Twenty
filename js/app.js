@@ -86,15 +86,26 @@ const sliderContainer = document.querySelectorAll('.slider-container');
 
 // Slider Dots
 function changeSlide(e){
-    const sliderLength = e.target.scrollWidth; // Länge des Sliders
-    const sliderPosition = e.target.scrollLeft; // Scollposition des Sliders
-    const sliderElementCount = e.target.children.length; // Anzahl der Elemente im Slider
-    const x =  (sliderPosition / sliderLength) * sliderElementCount; // Berechnung des aktuellen Slides
+    const slider = e.target; // Slider 
+    const sliderElement = slider.children[0]; // Slider Element
+    const sliderElementCount = slider.children.length; // Anzahl der Elemente im Slider
 
-    const dots = e.target.nextElementSibling; // Dots Container
+    const sliderWidth = slider.scrollWidth; // Breite des Sliders
+    const sliderElementWidth = sliderElement.offsetWidth; // Breite eines Elements im Slider
     
-    const arrowLeft = e.target.previousElementSibling.children[0]; // Linker Pfeil
-    const arrowRight = e.target.previousElementSibling.children[1]; // Rechter Pfeil
+    const sliderPosition = Math.ceil(slider.scrollLeft); // Scollposition des Sliders
+
+    const x =  Math.floor((sliderPosition) / sliderElementWidth); // Berechnung des aktuellen Slides
+
+    const dots = slider.nextElementSibling; // Dots Container
+    
+    const arrowLeft = slider.previousElementSibling.children[0]; // Linker Pfeil
+    const arrowRight = slider.previousElementSibling.children[1]; // Rechter Pfeil
+
+    console.log("x: " + x);
+    console.log("Slider Position" + Math.ceil(sliderPosition));
+    console.log("Slider Element Breite " + sliderElementWidth);
+    console.log("Slider Breite  " + sliderElementWidth * sliderElementCount);
 
     for (let i = 0; i < sliderElementCount; i++){
         if(i == x){
@@ -104,13 +115,13 @@ function changeSlide(e){
         }
     }
     // Ausblenden des rechten Pfeils, wenn das Ende des Sliders erreicht ist
-    if(sliderPosition == sliderLength - e.target.clientWidth){
+    if(x == sliderElementCount - 1){
         arrowRight.style.opacity = 0.3;
         arrowRight.style.pointerEvents = 'none';
     }
 
     // Einblenden des rechten Pfeils, wenn der Slider nach links gescrollt wird
-    if(sliderPosition < sliderLength - e.target.clientWidth){
+    if(sliderPosition < sliderWidth - e.target.clientWidth){
         arrowRight.style.opacity = 1;
         arrowRight.style.pointerEvents = 'auto';
     }
@@ -165,10 +176,10 @@ for(let i = 0; i < sliderContainer.length; i++){
 // --------------------- Horizontales Scrollen ---------------------
 
 function horizontalScroll(e) {
-    var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-    var scrollSpeed = 600; // Scrollgeschwindigkeit
+    var delta = e.deltaY; // Scrollrichtung
+    var scrollSpeed = 3; // Scrollgeschwindigkeit
     var container = document.querySelector('main');
-    container.scrollLeft -= delta * scrollSpeed;
+    container.scrollLeft += (delta || deltatrackpad) * scrollSpeed;
     e.preventDefault();
 }
 
@@ -189,7 +200,8 @@ MediaDesktop.addEventListener('change', function(e) {
     checkMediaQuery(e.currentTarget);
 });
 
-// --------------------- Custom Slider ---------------------
+
+// --------------------- Custom Scrollbar ---------------------
 
 // Verweise auf die Schieberegler-Elemente
 const sliderTrack = document.getElementById('custom-slider');
