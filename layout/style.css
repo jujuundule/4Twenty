@@ -970,7 +970,7 @@ section{
     border-radius: var(--border-radius-02);
     overflow: hidden;
     width: 20vw;
-    max-width: 100px;
+    max-width: 10vh;
     aspect-ratio: 1/1;
 }
 
@@ -985,7 +985,7 @@ section{
 #Kunden .testimonial{
     position: relative;
     background-color: var(--color-03);
-    width: 60%;
+    width: 85%;
     padding: 1rem;
     border-radius: var(--border-radius-01);
     opacity: 60%;
