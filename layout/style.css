@@ -250,11 +250,28 @@ body * {
     animation: rotate 10s linear infinite;
 }
 
-/* Preloader Animation*/
+/* Age Verification */
+#age-verification{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 
-#outer{
-    transform: rotate(20deg);
-    transform-origin: center;
+    backdrop-filter: blur(15px) brightness(50%);
+    display: grid;
+    place-items: center;
+    z-index: 99999;
+    overflow: hidden;
+    padding: 0 10vw;
+}
+
+#age-verification .button-container{
+    gap: 2vw;
+}
+
+#age-verification p{
+    max-width: 50ch;
 }
 
 /* Header/ Navigation */
@@ -411,6 +428,15 @@ section{
     opacity: 30%;
     z-index: -1;
     transform: rotate(10deg) translateX(50%);
+}
+
+/* Impressum */
+
+#Impressum{
+
+    background-image: url(../mediafiles/mobile/patterns/cracked_asphalt_seamless_pattern.webp);
+    height: 100vh;
+    padding: 15vh var(--padding-side-mobile);
 }
 
 /* Home */
@@ -1067,7 +1093,7 @@ footer{
     text-decoration: none;
     text-transform: uppercase;
     font-weight: var(--font-weight-bold);
-    padding: 2vh 5vw;
+    padding: 2vh 1rem;
     border: 1px solid var(--color-03);
 }
 
@@ -1082,6 +1108,15 @@ footer{
     width: max-content;
     margin: 0 auto;
     margin-top: 2vh;
+}
+
+/* Hover Effekte */
+
+.btn-01:hover,
+.btn-02:hover{
+    background-color: var(--color-03);
+    color: var(--color-01);
+    cursor: pointer;
 }
 
 /* =====================================*/
@@ -1124,6 +1159,12 @@ footer{
 @media screen and (min-width: 480px){
     
     /* Hintergründe */
+    #Impressum{
+        background-image: url('../mediafiles/tablet/patterns/cracked_asphalt_seamless_pattern.webp');
+        width: 100vw;
+        max-width: none;
+        margin: 0;
+    }
 
     .bg-divider-bottom{
         background-image: url('../mediafiles/divider/cracked_asphalt_inverted_unten.svg'), url('../mediafiles/tablet/patterns/cracked_asphalt_seamless_pattern.webp');
@@ -1260,6 +1301,13 @@ footer{
 
     /* Hintergründe */
 
+    #Impressum{
+        padding: 15vh var(--padding-side-desktop);
+        background-image: url('../mediafiles/desktop/background-images/cracked_asphalt_fullscreen.webp');
+        background-size: 100vw 100vh;
+
+    }
+
     .bg-fullscreen{
         background-image: url('../mediafiles/desktop/background-images/cracked_asphalt_fullscreen.webp');
         background-size: 100vw 100vh;
@@ -1353,7 +1401,7 @@ footer{
         display: none;
     }
 
-    .main-nav a.instagram-link{
+    .main-nav .instagram-link{
         display: none;
     }
 
@@ -1413,12 +1461,6 @@ footer{
 
     .effect-visualization .flex-row-element{
         gap: 2vh;
-    }
-
-    /* Hover Effekte */
-    .btn-02:hover{
-        background-color: var(--color-03);
-        color: var(--color-01);
     }
 
     /* Produkte */
@@ -1661,13 +1703,6 @@ footer{
 
     #Produkte-IL .slider-element:nth-child(5) .product-img{
         background-image: url('../mediafiles/desktop/product-images/intense-line/4twenty_product-image_tutti_frutti.webp');
-    }
-
-    /* Hover Effekte */
-
-    .product-slider .btn-01:hover{
-        background-color: var(--color-03);
-        color: var(--color-01);
     }
 
     /* Kunden */

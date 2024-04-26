@@ -8,6 +8,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 1000); // Adjust the delay time as needed
 });
 
+// -------------------------- Age Verification ---------------------
+
+const AgeVerification = document.getElementById('age-verification');
+const AgeVerificationButton = document.querySelectorAll('#age-verification .btn-01');
+
+AgeVerificationButton[0].addEventListener('click', function(){
+    AgeVerification.classList.add('hidden');
+});
+
 // --------------------- Slogan Rotation beim Scrollen ---------------------
 
 // Verweis auf das Slogan-Element
