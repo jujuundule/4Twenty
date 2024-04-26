@@ -636,6 +636,7 @@ section{
 
 .slider-element{
     min-width: 100%;
+    max-width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -985,7 +986,7 @@ section{
 #Kunden .testimonial{
     position: relative;
     background-color: var(--color-03);
-    width: 85%;
+    width: 60%;
     padding: 1rem;
     border-radius: var(--border-radius-01);
     opacity: 60%;
@@ -1684,6 +1685,10 @@ footer{
     #Kunden .dots,
     #Kunden .slider-arrows{
         display: none;
+    }
+
+    #Kunden .testimonial{
+        width: 85%;
     }
 
     /* Footer */
