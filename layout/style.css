@@ -807,9 +807,9 @@ section{
 }
 
 .product-slider .product-img{
-    aspect-ratio: 1/1;
     margin: 0;
     width: 75%;
+    height: 50vh;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -1592,11 +1592,7 @@ footer{
         width: 1vh;
         max-width: 20px;
     }
-
-    .product-slider .product-img{
-        aspect-ratio: 5/4;
-    }
-
+    
     .slider-container .slider-arrows .arrow {
         max-width: 4vh;
     }
