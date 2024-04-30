@@ -262,7 +262,7 @@ body * {
     backdrop-filter: blur(15px) brightness(50%);
     display: grid;
     place-items: center;
-    z-index: 9999;
+    z-index: 99991;
     overflow: hidden;
     padding: 0 10vw;
 }
@@ -401,33 +401,27 @@ section{
     position: relative;
 }
 
-.bg-gradient::before{
+.bg-gradient::before,
+.bg-gradient::after{
     content: ' ';
     position: absolute;
-    top: 8%;
-    left: 55%;
-    height: 40vw;
-    width: 100%;
+    top: 0;
+    width: 30%;
     max-width: 500px;
-    background-image: url("../mediafiles/svg/thc-p_chemical_compound.svg");
+    z-index: -1;
     background-repeat: no-repeat;
     opacity: 30%;
-    z-index: -1;
+}
+
+.bg-gradient::before{
+    left: 0;
+    background-image: url("../mediafiles/svg/thc-p_chemical_compound.svg");
     transform: rotate(-10deg) translateX(-50%);
 }
 
 .bg-gradient::after{
-    content: ' ';
-    position: absolute;
-    top: 40%;
-    right: 45%;
-    height: 40vw;
-    width: 100%;
-    max-width: 500px;
+    right:0;
     background-image: url("../mediafiles/svg/hhc_chemical_compound.svg");
-    background-repeat: no-repeat;
-    opacity: 30%;
-    z-index: -1;
     transform: rotate(10deg) translateX(50%);
 }
 
@@ -453,7 +447,7 @@ section{
     max-width: 300px;
 }
 
-#slogan-outer{
+#slogan-text{
     transform-origin: center;
 }
 
@@ -1533,6 +1527,8 @@ footer{
 
     .flavors-overview .slider{
         overflow: visible;
+        justify-content: space-around;
+        width: 80vw;
     }
 
     .flavors-overview .slider-element{
@@ -1555,7 +1551,7 @@ footer{
     }
 
     .flavors-overview .leaf img {
-        height: 10vh;
+        height: 8vh;
     }
 
 
@@ -1575,6 +1571,12 @@ footer{
     }    
 
     /* Produkt-Slider */
+
+    .slider{
+       overflow: hidden;
+    }
+
+
     .product-slider .slider-element{
         gap: 2vh;
     }
@@ -1588,7 +1590,8 @@ footer{
     }
 
     .slider-container .slider-arrows{
-        max-width: 800px;
+        width: 60vw;
+        max-width: 1000px;
     }
 
     /* Slider Hintergrundbilder */
@@ -1596,7 +1599,7 @@ footer{
     #Produkte-LL .slider-container,
     #Produkte-CL .slider-container,
     #Produkte-IL .slider-container{
-        gap: 2vh;
+        gap: 1vh;
     }
 
     #Produkte-LL .slider-element,
@@ -1608,7 +1611,7 @@ footer{
     #Produkte-LL .slider-container,
     #Produkte-CL .slider-container,
     #Produkte-IL .slider-container{
-        padding-top: 5vh;
+        padding-top: 2vh;
     }
 
     #Produkte-CL,
@@ -1640,6 +1643,8 @@ footer{
     .product-slider .product-slider-bg{
         background-position: top right;
         background-size: cover;
+        max-width: var(--max-width-desktop);
+        margin: 0 auto;
     }
 
     /* Light Line */

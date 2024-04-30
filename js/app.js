@@ -20,7 +20,7 @@ AgeVerificationButton[0].addEventListener('click', function(){
 // --------------------- Slogan Rotation beim Scrollen ---------------------
 
 // Verweis auf das Slogan-Element
-const slogan = document.getElementById('slogan-outer');
+const slogan = document.getElementById('slogan-text');
 const Main = document.querySelector('main');
 
 // Funktion zum Drehen des Slogans beim vertikalen Scrollen
