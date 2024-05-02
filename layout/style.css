@@ -505,7 +505,7 @@ section{
 
 .flex-container.comparison{
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .comparison .flex-row{
@@ -828,7 +828,7 @@ section{
 
 .product-slider .product-img{
     margin: 0;
-    width: 90%;
+    width: 80%;
     aspect-ratio: 1/1;
     background-size: contain;
     background-repeat: no-repeat;
@@ -950,23 +950,23 @@ section{
 
 /* Intense Line */
 #Produkte-IL .slider-element:nth-child(1) .product-slider-bg{
-    background-color: var(--color-01);
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_himbeere.webp');
 }
 
 #Produkte-IL .slider-element:nth-child(2) .product-slider-bg{
-    background-color: var(--color-01);
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_vanille_+_honig.webp');
 }
 
 #Produkte-IL .slider-element:nth-child(3) .product-slider-bg{
-    background-color: var(--color-01);
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_kaktus.webp');
 }
 
 #Produkte-IL .slider-element:nth-child(4) .product-slider-bg{
-    background-color: var(--color-01);
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_pina_colada.webp');
 }
 
 #Produkte-IL .slider-element:nth-child(5) .product-slider-bg{
-    background-color: var(--color-01);
+    background-image: url('../mediafiles/mobile/product-slider_bg/product-slider_bg_tutti_frutti.webp');
 }
 
 /* Kunden */
@@ -1087,7 +1087,7 @@ footer{
     text-decoration: none;
     text-transform: uppercase;
     font-weight: var(--font-weight-bold);
-    padding: 2vh 1rem;
+    padding: 2vh 1.5rem;
     border: 1px solid var(--color-03);
 }
 
@@ -1174,56 +1174,148 @@ footer{
 
     /* Produktbilder */
 
+    .product-slider .product-img{
+        max-width: 60%;
+     }
+
     /* Vapes */
     .product-img.vape_1ml{
-        background-image: url('../mediafiles/tablet/product-images/vapes/4twenty_vape_1ml.webp');
+        background-image: url('../mediafiles/desktop/product-images/vapes/4twenty_vape_1ml.webp');
     }
     
     .product-img.vape_2ml{
-        background-image: url('../mediafiles/tablet/product-images/vapes/4twenty_vape_2ml.webp');
+        background-image: url('../mediafiles/desktop/product-images/vapes/4twenty_vape_2ml.webp');
     }
 
     /* Light Line */
     #Produkte-LL .slider-element:nth-child(1) .product-img{
-        background-image: url('../mediafiles/tablet/product-images/light-line/4twenty_product-image_zkittles.webp');
+        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_zkittles.webp');
     }
 
     #Produkte-LL .slider-element:nth-child(2) .product-img{
-        background-image: url('../mediafiles/tablet/product-images/light-line/4twenty_product-image_limette_+_minze.webp');
+        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_limette_+_minze.webp');
     }
 
     #Produkte-LL .slider-element:nth-child(3) .product-img{
-        background-image: url('../mediafiles/tablet/product-images/light-line/4twenty_product-image_exotische_fruechte_+_ananas.webp');
+        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_exotische_fruechte_+_ananas.webp');
     }
 
     #Produkte-LL .slider-element:nth-child(4) .product-img{
-        background-image: url('../mediafiles/tablet/product-images/light-line/4twenty_product-image_black_fruits_+_acai.webp');
+        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_black_fruits_+_acai.webp');
     }
 
     #Produkte-LL .slider-element:nth-child(5) .product-img{
-        background-image: url('../mediafiles/tablet/product-images/light-line/4twenty_product-image_bienenstich_+_vanille.webp');
+        background-image: url('../mediafiles/desktop/product-images/light-line/4twenty_product-image_bienenstich_+_vanille.webp');
     }
 
     /* Core Line */
     #Produkte-CL .slider-element:nth-child(1) .product-img{
-        background-image: url('../mediafiles/tablet/product-images/core-line/4twenty_product-image_wedding-cake.webp');
+        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_wedding-cake.webp');
     }
 
     #Produkte-CL .slider-element:nth-child(2) .product-img{
-        background-image: url('../mediafiles/tablet/product-images/core-line/4twenty_product-image_obama-kush.webp');
+        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_obama-kush.webp');
     }
 
     #Produkte-CL .slider-element:nth-child(3) .product-img{
-        background-image: url('../mediafiles/tablet/product-images/core-line/4twenty_product-image_lmn-runtz.webp');
+        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_lmn-runtz.webp');
     }
 
     #Produkte-CL .slider-element:nth-child(4) .product-img{
-        background-image: url('../mediafiles/tablet/product-images/core-line/4twenty_product-image_ghost-train-haze.webp');
+        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_ghost-train-haze.webp');
     }
 
     #Produkte-CL .slider-element:nth-child(5) .product-img{
-        background-image: url('../mediafiles/tablet/product-images/core-line/4twenty_product-image_amnesia.webp');
+        background-image: url('../mediafiles/desktop/product-images/core-line/4twenty_product-image_amnesia.webp');
     }
+
+    /* Intense Line */
+    #Produkte-IL .slider-element:nth-child(1) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/intense-line/4twenty_product-image_himbeere.webp');
+    }
+
+    #Produkte-IL .slider-element:nth-child(2) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/intense-line/4twenty_product-image_honig-vanille.webp');
+    }
+
+    #Produkte-IL .slider-element:nth-child(3) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/intense-line/4twenty_product-image_kaktus.webp');
+    }
+
+    #Produkte-IL .slider-element:nth-child(4) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/intense-line/4twenty_product-image_pina-colada.webp');
+    }
+
+    #Produkte-IL .slider-element:nth-child(5) .product-img{
+        background-image: url('../mediafiles/desktop/product-images/intense-line/4twenty_product-image_tutti_frutti.webp');
+    }
+
+
+    /* Product-Slider Hintergrundbilder*/
+
+    /* Light Line */
+    #Produkte-LL .slider-element:nth-child(1) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_zkittles.webp');
+    }
+
+    #Produkte-LL .slider-element:nth-child(2) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_limette+minze.webp');
+    }
+
+    #Produkte-LL .slider-element:nth-child(3) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_exotische_fruechte+ananas.webp');
+    }
+
+    #Produkte-LL .slider-element:nth-child(4) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_blackfruits+acai.webp');
+    }
+
+    #Produkte-LL .slider-element:nth-child(5) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_bienenstich+vanille.webp');
+    }
+
+    /* Core Line */
+    #Produkte-CL .slider-element:nth-child(1) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_wedding_cake.webp');
+    }
+
+    #Produkte-CL .slider-element:nth-child(2) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_obama_kush.webp');
+    }
+
+    #Produkte-CL .slider-element:nth-child(3) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_lmn_runtz.webp');
+    }
+
+    #Produkte-CL .slider-element:nth-child(4) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_ghost_train_haze.webp');
+    }
+
+    #Produkte-CL .slider-element:nth-child(5) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_amnesia.webp');
+    }
+
+    /* Intense Line */
+    #Produkte-IL .slider-element:nth-child(1) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_himbeere.webp');
+    }
+
+    #Produkte-IL .slider-element:nth-child(2) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_vanille_+_honig.webp');
+    }
+
+    #Produkte-IL .slider-element:nth-child(3) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_kaktus.webp');
+    }
+
+    #Produkte-IL .slider-element:nth-child(4) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_pina_colada.webp');
+    }
+
+    #Produkte-IL .slider-element:nth-child(5) .product-slider-bg{
+        background-image: url('../mediafiles/tablet/product-slider_bg/product-slider_bg_tutti_frutti.webp');
+    }
+    
 }
 
 /* Desktop/ Laptop/  Tablet (Landscape) */
@@ -1585,10 +1677,6 @@ footer{
         max-width: var(--max-width-desktop);
     }
 
-    .product-slider .product-img{
-        max-width: 60vh;
-    }
-
     .slider-container .slider-arrows{
         width: 60vw;
         max-width: 1000px;
@@ -1647,6 +1735,8 @@ footer{
         margin: 0 auto;
     }
 
+        /* Product-Slider Hintergrundbilder*/
+
     /* Light Line */
     #Produkte-LL .slider-element:nth-child(1) .product-slider-bg{
         background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_zkittles.webp');
@@ -1687,27 +1777,27 @@ footer{
 
     #Produkte-CL .slider-element:nth-child(5) .product-slider-bg{
         background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_amnesia.webp');
-    }    
+    }
 
     /* Intense Line */
-    #Produkte-IL .slider-element:nth-child(1) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/intense-line/4twenty_product-image_himbeere.webp');
+    #Produkte-IL .slider-element:nth-child(1) .product-slider-bg{
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_himbeere.webp');
     }
 
-    #Produkte-IL .slider-element:nth-child(2) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/intense-line/4twenty_product-image_honig-vanille.webp');
+    #Produkte-IL .slider-element:nth-child(2) .product-slider-bg{
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_vanille_+_honig.webp');
     }
 
-    #Produkte-IL .slider-element:nth-child(3) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/intense-line/4twenty_product-image_kaktus.webp');
+    #Produkte-IL .slider-element:nth-child(3) .product-slider-bg{
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_kaktus.webp');
     }
 
-    #Produkte-IL .slider-element:nth-child(4) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/intense-line/4twenty_product-image_pina-colada.webp');
+    #Produkte-IL .slider-element:nth-child(4) .product-slider-bg{
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_pina_colada.webp');
     }
 
-    #Produkte-IL .slider-element:nth-child(5) .product-img{
-        background-image: url('../mediafiles/desktop/product-images/intense-line/4twenty_product-image_tutti_frutti.webp');
+    #Produkte-IL .slider-element:nth-child(5) .product-slider-bg{
+        background-image: url('../mediafiles/desktop/product-slider_bg/product-slider_bg_tutti_frutti.webp');
     }
 
     /* Kunden */
