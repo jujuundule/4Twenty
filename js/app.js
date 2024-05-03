@@ -111,11 +111,6 @@ function changeSlide(e){
     const arrowLeft = slider.previousElementSibling.children[0]; // Linker Pfeil
     const arrowRight = slider.previousElementSibling.children[1]; // Rechter Pfeil
 
-    console.log("x: " + x);
-    console.log("Slider Position" + Math.ceil(sliderPosition));
-    console.log("Slider Element Breite " + sliderElementWidth);
-    console.log("Slider Breite  " + sliderElementWidth * sliderElementCount);
-
     for (let i = 0; i < sliderElementCount; i++){
         if(i == x){
             dots.children[i].classList.add('active');
