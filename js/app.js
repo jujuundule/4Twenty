@@ -181,7 +181,7 @@ for(let i = 0; i < sliderContainer.length; i++){
 
 function horizontalScroll(e) {
     var delta = e.deltaY; // Scrollrichtung
-    var scrollSpeed = 3; // Scrollgeschwindigkeit
+    var scrollSpeed = 5; // Scrollgeschwindigkeit
     var container = document.querySelector('main');
     container.scrollLeft += (delta || deltatrackpad) * scrollSpeed;
     e.preventDefault();
@@ -189,6 +189,7 @@ function horizontalScroll(e) {
 
 function checkMediaQuery(MediaDesktop) {
     var container = document.querySelector('main'); // Container für das horizontale Scrollen
+
     if (MediaDesktop.matches) {
         container.addEventListener('wheel', horizontalScroll);
     } else {
@@ -207,19 +208,21 @@ MediaDesktop.addEventListener('change', function(e) {
 
 // --------------------- Custom Scrollbar ---------------------
 
-// Verweise auf die Schieberegler-Elemente
-const sliderTrack = document.getElementById('custom-slider');
-const sliderHandle = sliderTrack.children[0];
-
-// Berechnung der Dimensionen
-const itemWidth = document.querySelector('section').clientWidth;
-const containerWidth = document.querySelector('main').scrollWidth;
-
-// Setze die Breite des Schieberegler-Griffs
-sliderHandle.style.width = (itemWidth / containerWidth * 100) + 1 + '%';
 
 // Funktion zum Aktualisieren der Position des Schieberegler-Griffs
-function updateSliderHandlePosition() {
+    function updateSliderHandlePosition() {
+        // Verweise auf die Schieberegler-Elemente
+    const sliderTrack = document.getElementById('custom-slider');
+    const sliderHandle = sliderTrack.children[0];
+
+    // Berechnung der Dimensionen
+    const itemWidth = document.querySelector('section').clientWidth;
+    const containerWidth = document.querySelector('main').scrollWidth;
+
+    // Setze die Breite des Schieberegler-Griffs
+    sliderHandle.style.width = (itemWidth / containerWidth * 100) + 1 + '%';
+
+    // Berechne die aktuelle Scrollposition und den Prozentsatz
     const scrollPosition = document.querySelector('main').scrollLeft;
     const scrollPercentage = Math.round(scrollPosition / containerWidth * 100);
     
@@ -231,6 +234,11 @@ document.querySelector('main').addEventListener('scroll', updateSliderHandlePosi
 
 // Initialisiere die Position des Schieberegler-Griffs
 updateSliderHandlePosition();
+
+// Breite des Schieberegler-Griffs aktualisieren, wenn sich die Fenstergröße ändert
+window.addEventListener('resize', function() {
+    updateSliderHandlePosition();
+}); 
 
 
 
