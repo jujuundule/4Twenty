@@ -217,6 +217,23 @@ img{
     display: none !important; /* Hide elements */
 }
 
+/* Webseite under Maintenance*/
+.website_under_maintenance{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    gap: 2rem;
+}
+
+.website_under_maintenance img{
+    width: 50vw;
+    max-width: 600px;
+    min-width: 300px;
+}
+
 /* Scrollbar */
 
 body *::-webkit-scrollbar {

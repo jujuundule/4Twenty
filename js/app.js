@@ -197,7 +197,7 @@ function checkMediaQuery(MediaDesktop) {
     }
 }
 
-var MediaDesktop = window.matchMedia("(min-width: 1024px)"); // Media Query für Desktop
+var MediaDesktop = window.matchMedia("(min-width: 1024px) and (orientation: landscape)"); // Media Query für Desktop
 
 checkMediaQuery(MediaDesktop);
 
@@ -239,10 +239,3 @@ updateSliderHandlePosition();
 window.addEventListener('resize', function() {
     updateSliderHandlePosition();
 }); 
-
-
-
-
-
-
-
